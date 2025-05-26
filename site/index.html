@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pascal Heiniger</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fff;
+      --text: #222;
+      --accent: #046e7e;
+      --gap: 2rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111;
+        --text: #eee;
+        --accent: #58c2d4;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Work Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: var(--gap);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 400;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: var(--gap);
+    }
+
+    .gallery a {
+      display: block;
+      overflow: hidden;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+
+    .gallery a:hover {
+      transform: scale(1.03);
+    }
+
+    footer {
+      margin-top: var(--gap);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    footer ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pascal Heiniger</h1>
+    <p>Design, Wald, Web – von Andermatt aus.</p>
+  </header>
+
+  <section class="gallery" id="project-gallery">
+    <!-- Project thumbnails will be loaded here via JavaScript -->
+  </section>
+
+  <footer>
+    <p>Weitere Projekte:</p>
+    <ul>
+      <li><a href="https://pheinigerdesign.ch" target="_blank">P. Heiniger Design</a></li>
+      <li><a href="https://waldundklima.ch" target="_blank">Wald und Klima</a></li>
+      <li><a href="https://lugar.ch" target="_blank">Lugär</a></li>
+      <li><a href="https://thewolves.ch" target="_blank">The Wolves</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    async function loadProjects() {
+      const response = await fetch('projects.json');
+      const projects = await response.json();
+      const container = document.getElementById('project-gallery');
+
+      projects.sort((a, b) => new Date(b.date) - new Date(a.date)); // Newest first
+
+      for (const project of projects) {
+        const anchor = document.createElement('a');
+        anchor.href = `projects/${project.slug}.html`;
+        anchor.innerHTML = `<img src="${project.thumbnail}" alt="${project.title}">`;
+        container.appendChild(anchor);
+      }
+    }
+
+    loadProjects();
+  </script>
+</body>
+</html>
