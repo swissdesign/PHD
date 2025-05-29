@@ -3,6 +3,19 @@
    ================================ */
 
 /* Hero / Intro Section */
+.hero-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+
+.hero-logo .logo {
+  max-width: 240px;
+  width: 100%;
+  height: auto;
+}
+
 .hero {
   background: url('../assets/images/header-bg.jpg') center center / cover no-repeat;
   height: 100vh;
