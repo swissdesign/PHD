@@ -1,1 +1,64 @@
-navbar.css placeholder
+/* ================================
+   NAVBAR COMPONENT
+   ================================ */
+
+/* Container setup */
+.nav {
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+.nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 94px;
+}
+
+/* Brand */
+.brand {
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  color: #333;
+  text-decoration: none;
+}
+
+/* Nav menu */
+.nav-menu {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.nav-menu li a {
+  font-size: 1rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+  color: #111;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .nav .container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-menu li {
+    padding: 8px 0;
+  }
+}
