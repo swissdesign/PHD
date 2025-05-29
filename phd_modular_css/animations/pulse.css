@@ -1,3 +1,17 @@
+/* ================================
+   PULSE ANIMATION COMPONENT
+   ================================ */
+
+/* Optional: CSS variables for easier control */
+:root {
+  --pulse-color: rgba(0, 0, 0, 0.1);
+  --pulse-gradient: radial-gradient(circle, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+  --pulse-scale: 3;
+  --pulse-speed: 3s;
+  --pulse-speed-hover: 2.5s;
+}
+
+/* Wrapper that centers the logo */
 .pulse-wrapper {
   position: relative;
   display: flex;
@@ -7,40 +21,56 @@
   overflow: hidden;
 }
 
+/* The logo itself */
 .logo-hero {
   z-index: 2;
   width: 240px;
   transition: transform 2s ease;
 }
 
+/* The animated pulse rings */
 .pulse-ring {
   position: absolute;
   width: 240px;
   height: 240px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.1);
+  background: var(--pulse-gradient);
   z-index: 1;
-  animation: pulse-out 3s ease-out infinite;
+  animation: pulse-out var(--pulse-speed) ease-out infinite;
 }
 
 .pulse-ring.delay {
   animation-delay: 3s;
 }
 
+/* Hover states reverse the animation direction */
+.pulse-wrapper:hover .pulse-ring {
+  animation: pulse-in var(--pulse-speed-hover) ease-out infinite;
+}
+
+.pulse-wrapper:hover .pulse-ring.delay {
+  animation-delay: 0.3s;
+}
+
+.pulse-wrapper:hover .logo-hero {
+  transform: scale(1.03);
+}
+
+/* Keyframes for pulse out and in */
 @keyframes pulse-out {
   0% {
     transform: scale(1);
     opacity: 0.25;
   }
   100% {
-    transform: scale(3);
+    transform: scale(var(--pulse-scale));
     opacity: 0;
   }
 }
 
 @keyframes pulse-in {
   0% {
-    transform: scale(3);
+    transform: scale(var(--pulse-scale));
     opacity: 0;
   }
   100% {
@@ -49,14 +79,14 @@
   }
 }
 
-.pulse-wrapper:hover .pulse-ring {
-  animation: pulse-in 3s ease-out infinite;
-}
+/* Responsive tweaks for small screens */
+@media (max-width: 600px) {
+  .logo-hero {
+    width: 160px;
+  }
 
-.pulse-wrapper:hover .pulse-ring.delay {
-  animation-delay: 0.5s;
-}
-
-.pulse-wrapper:hover .logo-hero {
-  transform: scale(1.03);
+  .pulse-ring {
+    width: 160px;
+    height: 160px;
+  }
 }
