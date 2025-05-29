@@ -1,22 +1,28 @@
-/* ================================
-   PULSE ANIMATION COMPONENT
-   ================================ */
+:root {
+  --pulse-opacity: 0.4;
+  --pulse-scale: 3;
+  --pulse-speed: 3s;
+  --pulse-speed-hover: 2.5s;
+}
 
+/* Wrapper to center and hold everything */
 .pulse-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 90vh;
-  background-color: #fff; /* ensure full white bg */
   overflow: hidden;
+  background-color: #fff; /* fixed background to full white */
 }
 
+/* Logo container ensures precise pulse alignment */
 .logo-container {
   position: relative;
   width: 240px;
   height: 240px;
 }
 
+/* Shared logo + pulse positioning */
 .logo-hero,
 .logo-pulse {
   position: absolute;
@@ -27,50 +33,70 @@
   transform-origin: center center;
 }
 
+/* Main visible logo */
 .logo-hero {
   z-index: 2;
-  opacity: 0.85;
   transition: transform 2s ease;
+  opacity: 0.85; /* stronger black */
 }
 
+/* Ghost pulse effect */
 .logo-pulse {
-  z-index: 1;
   fill: rgba(0, 0, 0, 0.2);
-  animation: pulse-logo 3s ease-out infinite;
+  z-index: 1;
+  animation: pulse-logo var(--pulse-speed) ease-out infinite;
 }
 
 .logo-pulse.delay {
   animation-delay: 3s;
 }
 
-/* Hover effects */
+/* Hover effect reverses the pulse */
 .pulse-wrapper:hover .logo-pulse {
-  animation: pulse-logo-in 2.5s ease-out infinite;
+  animation: pulse-logo-in var(--pulse-speed-hover) ease-out infinite;
+}
+
+.pulse-wrapper:hover .logo-pulse.delay {
+  animation-delay: 0.3s;
 }
 
 .pulse-wrapper:hover .logo-hero {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
-/* Keyframes */
+/* Keyframes for pulse animations */
 @keyframes pulse-logo {
   0% {
     transform: scale(1);
-    opacity: 0.4;
+    opacity: var(--pulse-opacity);
   }
   100% {
-    transform: scale(3);
+    transform: scale(var(--pulse-scale));
     opacity: 0;
   }
 }
 
 @keyframes pulse-logo-in {
   0% {
-    transform: scale(3);
+    transform: scale(var(--pulse-scale));
     opacity: 0;
   }
   100% {
     transform: scale(1);
-    opacity: 0.4;
+    opacity: var(--pulse-opacity);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .logo-container {
+    width: 160px;
+    height: 160px;
+  }
+
+  .logo-hero,
+  .logo-pulse {
+    width: 100%;
+    height: 100%;
   }
 }
