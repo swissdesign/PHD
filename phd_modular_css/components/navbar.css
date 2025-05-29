@@ -62,3 +62,18 @@
     padding: 8px 0;
   }
 }
+
+
+/* ================================
+   OPTIONAL STICKY NAV BEHAVIOR
+   ================================ */
+
+.nav.sticky {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.95); /* Optional translucent white */
+  backdrop-filter: blur(8px);             /* Smooth blur effect */
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
