@@ -26,6 +26,13 @@
 }
 
 /* Nav menu */
+.logo-nav {
+  height: 28px;
+  width: auto;
+  display: block;
+  margin-top: 8px;
+}
+
 .nav-menu {
   display: flex;
   gap: 24px;
