@@ -1,92 +1,45 @@
-/* ================================
-   PULSE ANIMATION COMPONENT
-   ================================ */
-
-:root {
-  --pulse-color: rgba(0, 0, 0, 0.2); /* stronger than 0.1 */
-  --pulse-gradient: radial-gradient(circle, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 60%);
-  --pulse-scale: 3.5;
-  --pulse-speed: 3s;
-  --pulse-speed-hover: 2.5s;
-}
-
-/* Centered pulse wrapper */
-.pulse-wrapper {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 90vh;
-  overflow: hidden;
-  background-color: #f9f9f9; /* optional light background for contrast */
-}
-
-/* Main logo */
 .logo-hero {
-  z-index: 2;
   width: 240px;
+  z-index: 2;
+  position: relative;
   transition: transform 2s ease;
 }
 
-/* Pulse ring */
-.pulse-ring {
+.logo-pulse {
   position: absolute;
   width: 240px;
-  height: 240px;
-  border-radius: 50%;
-  background: var(--pulse-gradient);
+  height: auto;
+  fill: rgba(0, 0, 0, 0.2); /* translucent pulse */
   z-index: 1;
-  animation: pulse-out var(--pulse-speed) ease-out infinite;
+  animation: pulse-logo 3s ease-out infinite;
 }
 
-.pulse-ring.delay {
+.logo-pulse.delay {
   animation-delay: 3s;
 }
 
-/* Hover effect reverses the pulse */
-.pulse-wrapper:hover .pulse-ring {
-  animation: pulse-in var(--pulse-speed-hover) ease-out infinite;
-}
-
-.pulse-wrapper:hover .pulse-ring.delay {
-  animation-delay: 0.3s;
-}
-
-.pulse-wrapper:hover .logo-hero {
-  transform: scale(1.05);
-}
-
-/* Keyframes */
-@keyframes pulse-out {
+@keyframes pulse-logo {
   0% {
     transform: scale(1);
-    opacity: 0.5; /* more visible */
+    opacity: 0.5;
   }
   100% {
-    transform: scale(var(--pulse-scale));
+    transform: scale(3);
     opacity: 0;
   }
 }
 
-@keyframes pulse-in {
+.pulse-wrapper:hover .logo-pulse {
+  animation: pulse-logo-in 2.5s ease-out infinite;
+}
+
+@keyframes pulse-logo-in {
   0% {
-    transform: scale(var(--pulse-scale));
+    transform: scale(3);
     opacity: 0;
   }
   100% {
     transform: scale(1);
-    opacity: 0.5; /* match above */
-  }
-}
-
-/* Responsive adjustment */
-@media (max-width: 600px) {
-  .logo-hero {
-    width: 160px;
-  }
-
-  .pulse-ring {
-    width: 160px;
-    height: 160px;
+    opacity: 0.5;
   }
 }
