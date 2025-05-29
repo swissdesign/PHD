@@ -1,1 +1,29 @@
-grid.css placeholder
+/* ================================
+   GRID UTILITIES
+   ================================ */
+
+.grid {
+  display: grid;
+  gap: 32px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-center {
+  justify-items: center;
+  align-items: center;
+}
+
+/* Responsive collapse */
+@media (max-width: 768px) {
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
