@@ -2,16 +2,15 @@
    PULSE ANIMATION COMPONENT
    ================================ */
 
-/* Optional: CSS variables for easier control */
 :root {
-  --pulse-color: rgba(0, 0, 0, 0.1);
-  --pulse-gradient: radial-gradient(circle, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
-  --pulse-scale: 3;
+  --pulse-color: rgba(0, 0, 0, 0.2); /* stronger than 0.1 */
+  --pulse-gradient: radial-gradient(circle, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 60%);
+  --pulse-scale: 3.5;
   --pulse-speed: 3s;
   --pulse-speed-hover: 2.5s;
 }
 
-/* Wrapper that centers the logo */
+/* Centered pulse wrapper */
 .pulse-wrapper {
   position: relative;
   display: flex;
@@ -19,16 +18,17 @@
   align-items: center;
   height: 90vh;
   overflow: hidden;
+  background-color: #f9f9f9; /* optional light background for contrast */
 }
 
-/* The logo itself */
+/* Main logo */
 .logo-hero {
   z-index: 2;
   width: 240px;
   transition: transform 2s ease;
 }
 
-/* The animated pulse rings */
+/* Pulse ring */
 .pulse-ring {
   position: absolute;
   width: 240px;
@@ -43,7 +43,7 @@
   animation-delay: 3s;
 }
 
-/* Hover states reverse the animation direction */
+/* Hover effect reverses the pulse */
 .pulse-wrapper:hover .pulse-ring {
   animation: pulse-in var(--pulse-speed-hover) ease-out infinite;
 }
@@ -53,14 +53,14 @@
 }
 
 .pulse-wrapper:hover .logo-hero {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
-/* Keyframes for pulse out and in */
+/* Keyframes */
 @keyframes pulse-out {
   0% {
     transform: scale(1);
-    opacity: 0.25;
+    opacity: 0.5; /* more visible */
   }
   100% {
     transform: scale(var(--pulse-scale));
@@ -75,11 +75,11 @@
   }
   100% {
     transform: scale(1);
-    opacity: 0.25;
+    opacity: 0.5; /* match above */
   }
 }
 
-/* Responsive tweaks for small screens */
+/* Responsive adjustment */
 @media (max-width: 600px) {
   .logo-hero {
     width: 160px;
