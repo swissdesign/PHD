@@ -24,7 +24,7 @@
 }
 
 .pulse-ring.delay {
-  animation-delay: 0.5s;
+  animation-delay: 3s;
 }
 
 @keyframes pulse-out {
