@@ -1,1 +1,43 @@
-footer.css placeholder
+/* ================================
+   FOOTER COMPONENT
+   ================================ */
+
+footer {
+  background-color: #141414;
+  color: #999;
+  text-align: center;
+  padding: 6rem 2rem;
+  font-size: 14px;
+}
+
+footer p {
+  margin-bottom: 1rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.social-icons li a {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  border: 1px solid #666;
+  border-radius: 50%;
+  font-size: 18px;
+  color: #ccc;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.social-icons li a:hover {
+  background-color: #ffffff;
+  color: #111;
+  border-color: transparent;
+}
