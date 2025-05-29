@@ -7,32 +7,35 @@
   <meta name="description" content="Digital and Brand Design Studio in Andermatt – clean, bold, code-first design thinking." />
 
   <!-- Modular CSS Structure -->
-<link rel="stylesheet" href="./phd_modular_css/animations/pulse.css" />
-  
-<link rel="stylesheet" href="./phd_modular_css/base/reset.css">
-<link rel="stylesheet" href="./phd_modular_css/base/typography.css">
-
-<link rel="stylesheet" href="./phd_modular_css/layout/container.css">
-<link rel="stylesheet" href="./phd_modular_css/layout/grid.css">
-
-<link rel="stylesheet" href="./phd_modular_css/components/navbar.css">
-<link rel="stylesheet" href="./phd_modular_css/components/buttons.css">
-<link rel="stylesheet" href="./phd_modular_css/components/portfolio.css">
-<link rel="stylesheet" href="./phd_modular_css/components/footer.css">
-
-<link rel="stylesheet" href="./phd_modular_css/pages/home.css">
+  <link rel="stylesheet" href="./phd_modular_css/animations/pulse.css" />
+  <link rel="stylesheet" href="./phd_modular_css/base/reset.css" />
+  <link rel="stylesheet" href="./phd_modular_css/base/typography.css" />
+  <link rel="stylesheet" href="./phd_modular_css/layout/container.css" />
+  <link rel="stylesheet" href="./phd_modular_css/layout/grid.css" />
+  <link rel="stylesheet" href="./phd_modular_css/components/navbar.css" />
+  <link rel="stylesheet" href="./phd_modular_css/components/buttons.css" />
+  <link rel="stylesheet" href="./phd_modular_css/components/portfolio.css" />
+  <link rel="stylesheet" href="./phd_modular_css/components/footer.css" />
+  <link rel="stylesheet" href="./phd_modular_css/pages/home.css" />
 
   <!-- Optional: Google Fonts (self-host later for performance) -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet">
 </head>
 <body>
 
+  <!-- Hidden SVG Symbol for Reuse -->
+  <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="phd-logo-symbol" viewBox="0 0 252.516 235.098">
+      <path d="M165.218,0s36.521-.353,27.718,35.911c...etc..." fill="#1d1d1b" />
+    </symbol>
+  </svg>
+
   <header>
     <nav class="nav">
       <div class="container nav-flex">
-          <a href="index.html" class="brand">
-            <img src="./assets/images/phd-logo.svg" alt="P. Heiniger Design Logo" class="logo-nav" />
-          </a>
+        <a href="index.html" class="brand">
+          <img src="./assets/images/phd-logo.svg" alt="P. Heiniger Design Logo" class="logo-nav" />
+        </a>
         <ul class="nav-menu">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
@@ -42,24 +45,29 @@
     </nav>
   </header>
 
-<section class="hero">
-  <div class="container hero-logo">
-    <div class="pulse-wrapper">
-      <!-- Ghost pulses behind -->
-      <svg class="logo-pulse">
-        <use href="#phd-logo-shape" />
-      </svg>
-      <svg class="logo-pulse delay">
-        <use href="#phd-logo-shape" />
-      </svg>
+  <section class="hero">
+    <div class="container hero-logo">
+      <div class="pulse-wrapper">
+        <!-- Pulses using the reusable logo symbol -->
+        <svg class="logo-pulse" aria-hidden="true">
+          <use href="#phd-logo-symbol" />
+        </svg>
+        <svg class="logo-pulse delay" aria-hidden="true">
+          <use href="#phd-logo-symbol" />
+        </svg>
 
-      <!-- Main logo -->
-      <svg class="logo-hero" id="phd-logo-shape" viewBox="0 0 252.516 235.098" xmlns="http://www.w3.org/2000/svg">
-        <path d="M165.218,0s36.521-.353,27.718,35.911c... etc..." fill="#1d1d1b"/>
-      </svg>
+        <!-- Main Logo -->
+        <svg class="logo-hero" aria-label="P. Heiniger Design Logo" viewBox="0 0 252.516 235.098" xmlns="http://www.w3.org/2000/svg">
+          <use href="#phd-logo-symbol" />
+        </svg>
+      </div>
+
+      <!-- Fallback for non-SVG support -->
+      <noscript>
+        <img src="./assets/images/phd-logo.png" alt="P. Heiniger Design Logo" />
+      </noscript>
     </div>
-  </div>
-</section>
+  </section>
 
   <main>
     <section class="portfolio">
