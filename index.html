@@ -45,9 +45,18 @@
 <section class="hero">
   <div class="container hero-logo">
     <div class="pulse-wrapper">
-      <div class="pulse-ring"></div>
-      <div class="pulse-ring delay"></div>
-      <img src="./assets/images/phd-logo.svg" alt="P. Heiniger Design Logo" class="logo-hero" />
+      <!-- Ghost pulses behind -->
+      <svg class="logo-pulse">
+        <use href="#phd-logo-shape" />
+      </svg>
+      <svg class="logo-pulse delay">
+        <use href="#phd-logo-shape" />
+      </svg>
+
+      <!-- Main logo -->
+      <svg class="logo-hero" id="phd-logo-shape" viewBox="0 0 252.516 235.098" xmlns="http://www.w3.org/2000/svg">
+        <path d="M165.218,0s36.521-.353,27.718,35.911c... etc..." fill="#1d1d1b"/>
+      </svg>
     </div>
   </div>
 </section>
