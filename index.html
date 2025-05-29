@@ -5,12 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>P. Heiniger Design</title>
   <meta name="description" content="Digital and Brand Design Studio in Andermatt – clean, bold, code-first design thinking." />
-  <link rel="stylesheet" href="css/style.css" />
 
-  <!-- Optional: Tailwind CSS (remove if not using) -->
-  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <!-- Modular CSS Structure -->
+  <link rel="stylesheet" href="css/base/reset.css">
+  <link rel="stylesheet" href="css/base/typography.css">
 
-  <!-- Fonts (Optional: Self-host later) -->
+  <link rel="stylesheet" href="css/layout/container.css">
+  <link rel="stylesheet" href="css/layout/grid.css">
+
+  <link rel="stylesheet" href="css/components/navbar.css">
+  <link rel="stylesheet" href="css/components/buttons.css">
+  <link rel="stylesheet" href="css/components/portfolio.css">
+  <link rel="stylesheet" href="css/components/footer.css">
+
+  <link rel="stylesheet" href="css/pages/home.css">
+
+  <!-- Optional: Google Fonts (self-host later for performance) -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet">
 </head>
 <body>
@@ -47,7 +57,6 @@
         </ul>
 
         <div class="portfolio-grid">
-          <!-- You can generate these with JSON in the future -->
           <article class="portfolio-item photoshop branding">
             <a href="single-project.html">
               <img src="images/portfolio-img1.jpg" alt="Project One" />
@@ -106,7 +115,7 @@
     </div>
   </footer>
 
-  <!-- JS -->
+  <!-- JS Scripts -->
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/isotope.js"></script>
