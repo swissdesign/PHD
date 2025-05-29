@@ -1,100 +1,76 @@
-:root {
-  --pulse-opacity: 0.5;
-  --pulse-scale: 3;
-  --pulse-speed: 3s;
-  --pulse-speed-hover: 2.5s;
-}
+/* ================================
+   PULSE ANIMATION COMPONENT
+   ================================ */
 
-/* Wrapper to center and hold everything */
 .pulse-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 90vh;
+  background-color: #fff; /* ensure full white bg */
   overflow: hidden;
-  background-color: #f9f9f9;
 }
 
-/* Logo container ensures precise pulse alignment */
 .logo-container {
   position: relative;
   width: 240px;
-  height: auto;
+  height: 240px;
 }
 
-/* Shared logo + pulse positioning */
 .logo-hero,
 .logo-pulse {
-  width: 240px;
-  height: auto;
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
   transform-origin: center center;
 }
 
-/* Main visible logo */
 .logo-hero {
   z-index: 2;
+  opacity: 0.85;
   transition: transform 2s ease;
-  opacity: 0.75; /* Adjust as needed */
 }
 
-/* Ghost pulse effect */
 .logo-pulse {
-  fill: rgba(0, 0, 0, 0.2);
   z-index: 1;
-  animation: pulse-logo var(--pulse-speed) ease-out infinite;
+  fill: rgba(0, 0, 0, 0.2);
+  animation: pulse-logo 3s ease-out infinite;
 }
 
 .logo-pulse.delay {
   animation-delay: 3s;
 }
 
-/* Hover effect reverses the pulse */
+/* Hover effects */
 .pulse-wrapper:hover .logo-pulse {
-  animation: pulse-logo-in var(--pulse-speed-hover) ease-out infinite;
-}
-
-.pulse-wrapper:hover .logo-pulse.delay {
-  animation-delay: 0.3s;
+  animation: pulse-logo-in 2.5s ease-out infinite;
 }
 
 .pulse-wrapper:hover .logo-hero {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
-/* Keyframes for pulse animations */
+/* Keyframes */
 @keyframes pulse-logo {
   0% {
     transform: scale(1);
-    opacity: var(--pulse-opacity);
+    opacity: 0.4;
   }
   100% {
-    transform: scale(var(--pulse-scale));
+    transform: scale(3);
     opacity: 0;
   }
 }
 
 @keyframes pulse-logo-in {
   0% {
-    transform: scale(var(--pulse-scale));
+    transform: scale(3);
     opacity: 0;
   }
   100% {
     transform: scale(1);
-    opacity: var(--pulse-opacity);
-  }
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .logo-container {
-    width: 160px;
-  }
-
-  .logo-hero,
-  .logo-pulse {
-    width: 160px;
+    opacity: 0.4;
   }
 }
