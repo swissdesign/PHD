@@ -2,12 +2,33 @@
    HOME PAGE STYLES
    ================================ */
 
+/* Prevent scrolling unless screen is very small */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
 /* Hero / Intro Section */
+.hero {
+  background: url('../assets/images/header-bg.jpg') center center / cover no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  padding-top: 4rem; /* for navbar spacing */
+  padding-bottom: 4rem; /* for footer spacing */
+}
+
 .hero-logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 90vh;
+  max-width: 90vw;
+  max-height: 60vh;
 }
 
 .hero-logo .logo {
@@ -16,17 +37,21 @@
   height: auto;
 }
 
-.hero {
-  background: url('../assets/images/header-bg.jpg') center center / cover no-repeat;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+/* Optional animated pulse logos */
+.logo-pulse,
+.logo-pulse.delay {
+  width: 180px;
+  height: auto;
 }
 
+.logo-hero {
+  width: 160px;
+  height: auto;
+}
+
+/* Hero content (if added later) */
 .hero-content {
-  background-color: transparent;;
+  background-color: transparent;
   padding: 48px 32px;
   max-width: 640px;
   border-radius: 8px;
@@ -46,26 +71,15 @@
   line-height: 1.6;
 }
 
-/* Portfolio Grid Section */
-.portfolio-grid {
-  padding: 80px 0;
-}
+/* Responsive fallback for short screen heights */
+@media (max-height: 500px) {
+  html, body {
+    overflow-y: auto;
+  }
 
-.portfolio-grid .grid-3 {
-  margin-top: 48px;
-}
-
-/* Section Headings */
-.section-title {
-  font-size: 1.4rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  text-align: center;
-  margin-bottom: 32px;
-}
-
-/* Contact Section */
-.contact-section {
-  padding: 80px 0;
+  .hero {
+    height: auto;
+    min-height: 500px;
+    padding: 2rem 1rem;
+  }
 }
