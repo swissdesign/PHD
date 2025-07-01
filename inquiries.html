@@ -1,54 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>P. Heiniger Design – Inquiries</title>
-  <meta name="description" content="Submit inquiries for fixed-price design services – Brand, Print, Web, and more." />
-
-  <!-- Modular CSS Structure -->
-  <link rel="stylesheet" href="./phd_modular_css/animations/pulse.css" />
-  <link rel="stylesheet" href="./phd_modular_css/base/reset.css" />
-  <link rel="stylesheet" href="./phd_modular_css/base/typography.css" />
-  <link rel="stylesheet" href="./phd_modular_css/layout/container.css" />
-  <link rel="stylesheet" href="./phd_modular_css/layout/grid.css" />
-  <link rel="stylesheet" href="./phd_modular_css/components/navbar.css" />
-  <link rel="stylesheet" href="./phd_modular_css/components/buttons.css" />
-  <link rel="stylesheet" href="./phd_modular_css/components/footer.css" />
-  <link rel="stylesheet" href="./phd_modular_css/pages/inquiries.css" />
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet">
-</head>
 <body>
+  <div class="layout">
 
-  <header>
-    <nav class="nav">
-      <div class="container nav-flex">
-        <a href="index.html" class="brand">
-          <img src="./assets/images/phd-logo.svg" alt="P. Heiniger Design Logo" class="logo-nav" />
-        </a>
-        <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="inquiries.html" class="active">Inquiries</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+    <header>
+      <nav class="nav">
+        <div class="container nav-flex">
+          <a href="index.html" class="brand">
+            <img src="./assets/images/phd-logo.svg" alt="P. Heiniger Design Logo" class="logo-nav" />
+          </a>
+          <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="inquiries.html" class="active">Inquiries</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
 
-  <section class="hero minimal-hero">
-    <div class="container">
-      <h1>Inquiries</h1>
-      <p>Money is just a proxy for value. Here's how I deliver it.</p>
-    </div>
-  </section>
+    <main class="inquiries-main">
+      <section class="hero minimal-hero">
+        <div class="container">
+          <h1>Inquiries</h1>
+          <p>Money is just a proxy for value. Here's how I deliver it.</p>
+        </div>
+      </section>
 
-  <main>
-    <section class="offerings">
-      <div class="container">
-        <h2>Fixed-Price Design Services</h2>
-        <p class="lead">Choose the service that fits your need. Fewer emails. More progress.</p>
+      <section class="offerings">
+        <div class="container">
+          <h2>Fixed-Price Design Services</h2>
+          <p class="lead">Choose the service that fits your need. Fewer emails. More progress.</p>
 
-        <div class="offers-grid">
+  <div class="offers-grid">
           <article class="offer-card">
             <h3>Brand Setup Sprint</h3>
             <p class="result">5-page Brand Guideline PDF + logo cleanup</p>
@@ -82,7 +63,12 @@
       </div>
     </section>
 
-    <section class="inquiry-form">
+      <section class="inquiry-form">
+        <div class="container">
+          <h2>Send an Inquiry</h2>
+          <p>Tell me what you need. I'll get back to you within 1–2 working days.</p>
+
+           <section class="inquiry-form">
       <div class="container">
         <h2>Send an Inquiry</h2>
         <p>Tell me what you need. I'll get back to you within 1–2 working days.</p>
@@ -106,20 +92,17 @@
     </section>
   </main>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 P. Heiniger Design – Built with clean hands & dirty keyboard</p>
-      <ul class="social-icons">
-        <li><a href="#">FB</a></li>
-        <li><a href="#">TW</a></li>
-        <li><a href="#">IG</a></li>
-        <li><a href="#">GH</a></li>
-      </ul>
-    </div>
-  </footer>
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 P. Heiniger Design – Built with clean hands & dirty keyboard</p>
+        <ul class="social-icons">
+          <li><a href="#">FB</a></li>
+          <li><a href="#">TW</a></li>
+          <li><a href="#">IG</a></li>
+          <li><a href="#">GH</a></li>
+        </ul>
+      </div>
+    </footer>
 
-  <!-- Scripts -->
-  <script src="js/imagesloaded.min.js"></script>
-  <script src="js/custom.js"></script>
+  </div> <!-- End .layout -->
 </body>
-</html>
