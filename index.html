@@ -133,7 +133,7 @@ function updateVisuals(progress) {
 // Background parallax movement
 function updateBackground(progress) {
   const maxOffset = bgImage.offsetWidth - window.innerWidth;
-  const offset = (progress - 0.5) * maxOffset * 1;
+  const offset = (progress - 0.5) * maxOffset * 0;
   bgImage.style.transform = `translateX(${-offset}px)`;
 }
 
