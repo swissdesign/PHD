@@ -153,10 +153,14 @@
   ];
   let currentBgIndex = 0;
 
-  setInterval(() => {
-    currentBgIndex = (currentBgIndex + 1) % bgImages.length;
-    bgPanorama.style.backgroundImage = `url(${bgImages[currentBgIndex]})`;
-  }, 2 * 60 * 1000); // every 2 minutes
+  // Fallback: set initial image
+bgPanorama.style.backgroundImage = `url(${bgImages[0]})`;
+
+// Switch background every 2 minutes
+setInterval(() => {
+  currentBgIndex = (currentBgIndex + 1) % bgImages.length;
+  bgPanorama.style.backgroundImage = `url(${bgImages[currentBgIndex]})`;
+}, 2 * 60 * 1000);
 </script>
 </body>
 </html>
