@@ -68,10 +68,14 @@
     width: 100%;
     gap: 1rem;
     padding: 2rem 0;
+    position: relative;
+  z-index: 9999; /* Make sure it’s on top of everything */
   }
 
   .nav-menu li {
     width: 100%;
+    position: relative;
+  z-index: 9999; /* Make sure it’s on top of everything */
   }
 
   .nav-menu li a {
@@ -80,6 +84,8 @@
     font-size: 1.2rem;
     text-align: center;
     touch-action: manipulation; /* Improves responsiveness on mobile */
+    position: relative;
+  z-index: 9999; /* Make sure it’s on top of everything */
   }
 }
 

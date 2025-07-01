@@ -23,6 +23,7 @@ html, body {
   padding-bottom: 4rem;  /* reserve for footer */
   text-align: center;
   position: relative;
+  z-index: 1; /* Behind nav */
 }
 
 /* Logo scroll container */
@@ -31,6 +32,7 @@ html, body {
   display: flex;
   justify-content: center;
   will-change: transform;
+  z-index: 1; /* Behind nav */
 }
 
 /* Main SVG logo */
