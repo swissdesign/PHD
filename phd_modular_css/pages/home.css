@@ -8,67 +8,44 @@ html, body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
-/* Hero / Intro Section */
+/* Hero Section */
 .hero {
   background: url('../assets/images/header-bg.jpg') center center / cover no-repeat;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  padding-top: 4rem;   /* space for nav */
+  padding-bottom: 4rem; /* space for footer */
   text-align: center;
-  position: relative;
-  padding-top: 4rem; /* for navbar spacing */
-  padding-bottom: 4rem; /* for footer spacing */
 }
 
-.hero-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 90vw;
-  max-height: 60vh;
-}
-
-.hero-logo .logo {
-  max-width: 240px;
+/* Logo container for scroll effect */
+.logo-scroller {
   width: 100%;
-  height: auto;
+  display: flex;
+  justify-content: center;
+  will-change: transform;
 }
 
-/* Optional animated pulse logos */
-.logo-pulse,
-.logo-pulse.delay {
+/* Main SVG logo */
+.logo {
   width: 180px;
   height: auto;
+  fill: #1d1d1b;
+  transition: transform 0.1s linear, fill 0.2s ease-in-out;
+  will-change: transform, fill;
 }
 
-.logo-hero {
-  width: 160px;
-  height: auto;
-}
-
-/* Hero content (if added later) */
-.hero-content {
-  background-color: transparent;
-  padding: 48px 32px;
-  max-width: 640px;
-  border-radius: 8px;
-}
-
-.hero h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  margin-bottom: 16px;
-}
-
-.hero p {
-  font-size: 1rem;
-  color: #555;
-  line-height: 1.6;
+/* Footer spacing ensured */
+footer {
+  z-index: 10;
 }
 
 /* Responsive fallback for short screen heights */
