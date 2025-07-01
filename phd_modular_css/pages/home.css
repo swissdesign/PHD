@@ -14,17 +14,17 @@ html, body {
 
 /* bg - panorama */
 .bg-panorama {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
-  width: 300vw; /* long panoramic width */
+  width: 300vw; /* to give space for side panning */
   height: 100vh;
-  background-image: url('images/pano1.jpg');
   background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat;
-  background-position: center;
-  z-index: -2;
   transition: background-image 1s ease-in-out;
+  will-change: transform;
+  z-index: -1;
 }
 
 /* Hero Section */
