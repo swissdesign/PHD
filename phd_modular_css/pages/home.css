@@ -24,10 +24,11 @@ html, body {
 
 .bg-panorama img {
   height: 100vh;
-  width: auto; /* keep image ratio */
+  width: auto;
   position: absolute;
   top: 0;
   left: 0;
+  transition: transform 0.4s ease;
   will-change: transform;
 }
 
