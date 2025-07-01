@@ -75,82 +75,13 @@
   <script src="js/custom.js"></script>
 <script>
   const logo = document.querySelector('.logo');
-  const bgPanorama = document.querySelector('.bg-panorama');
-  let scrollProgress = 0; // range: 0 to 1
-  let lastTouchY = null;
-
-  // Limit any value between min and max
-  function clamp(val, min, max) {
-    return Math.max(min, Math.min(max, val));
-  }
-
-  // Update logo and background based on scroll progress
-  function updateLogo(progress) {
-    // Normalize progress from 0–1 to -1–1
-    const offsetNormalized = (progress - 0.5) * 2;
-    const clamped = clamp(offsetNormalized, -1, 1);
-    const absProgress = Math.abs(clamped);
-
-    // Horizontal logo movement (as % of viewport width)
-    const maxShiftVW = 50;
-    const offsetX = clamped * maxShiftVW;
-    logo.style.transform = `translateX(${offsetX}vw)`;
-
-    // Fill color interpolation from black to blue
-    const r = Math.round(29 + (0 - 29) * absProgress);
-    const g = Math.round(29 + (123 - 29) * absProgress);
-    const b = Math.round(27 + (255 - 27) * absProgress);
-    logo.style.fill = `rgb(${r}, ${g}, ${b})`;
-
-    // Size: 400px to 200px
-    const size = 400 - (200 * absProgress);
-    logo.style.width = `${size}px`;
-
-    // Opacity: 1 → 0
-    logo.style.opacity = `${1 - absProgress}`;
-
-    // Update parallax background movement
-    updateBackground(progress);
-  }
-
-  // Background parallax shift
-  function updateBackground(progress) {
-    const offset = (0.5 - progress) * 100; // move opposite direction
-    bgPanorama.style.transform = `translateX(${offset}px)`;
-  }
-
-  // Handle mouse wheel scroll (desktop)
-  window.addEventListener('wheel', (e) => {
-    scrollProgress += e.deltaY * 0.0015;
-    scrollProgress = clamp(scrollProgress, 0, 1);
-    updateLogo(scrollProgress);
-  }, { passive: false });
-
-  // Handle touch scroll (mobile)
-  window.addEventListener('touchstart', (e) => {
-    if (e.touches.length === 1) {
-      lastTouchY = e.touches[0].clientY;
-    }
-  });
-
-  window.addEventListener('touchmove', (e) => {
-    if (e.touches.length === 1 && lastTouchY !== null) {
-      const currentY = e.touches[0].clientY;
-      const deltaY = lastTouchY - currentY;
-      scrollProgress += deltaY * 0.003;
-      scrollProgress = clamp(scrollProgress, 0, 1);
-      updateLogo(scrollProgress);
-      lastTouchY = currentY;
-    }
-  }, { passive: false });
-
-  // Prevent page from scrolling
-  window.addEventListener('scroll', e => window.scrollTo(0, 0));
-
-   // JavaScript (replace your bg logic with this)
 const bgPanorama = document.querySelector('.bg-panorama');
 const bgImage = document.getElementById('bg-image');
 
+let scrollProgress = 0; // value between 0 and 1
+let lastTouchY = null;
+
+// Background image list
 const bgImages = [
   'assets/images/pano1.jpg',
   'assets/images/pano2.jpg',
@@ -158,22 +89,81 @@ const bgImages = [
   'assets/images/pano4.jpg'
 ];
 let currentBgIndex = 0;
+bgImage.src = bgImages[currentBgIndex]; // Set initial image
 
-// Initial image
-bgImage.src = bgImages[0];
-
-// Switch background every 2 minutes
+// Rotate background image every 2 minutes
 setInterval(() => {
   currentBgIndex = (currentBgIndex + 1) % bgImages.length;
   bgImage.src = bgImages[currentBgIndex];
 }, 2 * 60 * 1000);
 
-// Update background based on scroll
+// Clamp helper
+function clamp(val, min, max) {
+  return Math.max(min, Math.min(max, val));
+}
+
+// Update both logo and background
+function updateVisuals(progress) {
+  const offsetNormalized = (progress - 0.5) * 2; // -1 to 1
+  const clamped = clamp(offsetNormalized, -1, 1);
+  const absProgress = Math.abs(clamped);
+
+  // Logo transform
+  const maxShiftVW = 50;
+  const offsetX = clamped * maxShiftVW;
+  logo.style.transform = `translateX(${offsetX}vw)`;
+
+  // Logo fill color
+  const r = Math.round(29 + (0 - 29) * absProgress);
+  const g = Math.round(29 + (123 - 29) * absProgress);
+  const b = Math.round(27 + (255 - 27) * absProgress);
+  logo.style.fill = `rgb(${r}, ${g}, ${b})`;
+
+  // Logo size
+  const size = 400 - (200 * absProgress); // from 400px down to 200px
+  logo.style.width = `${size}px`;
+
+  // Opacity fade
+  logo.style.opacity = `${1 - absProgress}`;
+
+  // Background image translate
+  updateBackground(progress);
+}
+
+// Background parallax movement
 function updateBackground(progress) {
   const maxOffset = bgImage.offsetWidth - window.innerWidth;
   const offset = (progress - 0.5) * maxOffset * 2;
   bgImage.style.transform = `translateX(${-offset}px)`;
 }
+
+// Scroll via mouse
+window.addEventListener('wheel', (e) => {
+  scrollProgress += e.deltaY * 0.0015;
+  scrollProgress = clamp(scrollProgress, 0, 1);
+  updateVisuals(scrollProgress);
+}, { passive: false });
+
+// Scroll via touch
+window.addEventListener('touchstart', (e) => {
+  if (e.touches.length === 1) {
+    lastTouchY = e.touches[0].clientY;
+  }
+});
+window.addEventListener('touchmove', (e) => {
+  if (e.touches.length === 1 && lastTouchY !== null) {
+    const deltaY = lastTouchY - e.touches[0].clientY;
+    scrollProgress += deltaY * 0.003;
+    scrollProgress = clamp(scrollProgress, 0, 1);
+    updateVisuals(scrollProgress);
+    lastTouchY = e.touches[0].clientY;
+  }
+}, { passive: false });
+
+// Prevent actual page scroll
+window.addEventListener('scroll', (e) => {
+  window.scrollTo(0, 0);
+});
 </script>
 </body>
 </html>
