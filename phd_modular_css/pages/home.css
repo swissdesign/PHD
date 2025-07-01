@@ -2,13 +2,14 @@
    HOME PAGE STYLES
    ================================ */
 
-/* Lock viewport unless height is very small */
+/* Prevent scroll on large screens, allow it on very small ones */
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
   overflow: hidden;
   font-family: 'Source Sans Pro', sans-serif;
+  background-color: #fff;
 }
 
 /* Hero Section */
@@ -18,13 +19,13 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 4rem;   /* space for nav */
-  padding-bottom: 4rem; /* space for footer */
+  padding-top: 4rem;     /* reserve for nav */
+  padding-bottom: 4rem;  /* reserve for footer */
   text-align: center;
   position: relative;
 }
 
-/* Logo container for scroll effect */
+/* Logo scroll container */
 .logo-scroller {
   width: 100%;
   display: flex;
@@ -34,14 +35,19 @@ html, body {
 
 /* Main SVG logo */
 .logo {
-  width: 300px;
+  width: 400px;
   height: auto;
   fill: #1d1d1b;
-  transition: transform 0.2s ease-out, fill 0.3s ease-out;
-  will-change: transform, fill;
+  opacity: 1;
+  transition:
+    transform 0.2s ease-out,
+    fill 0.3s ease-out,
+    opacity 0.3s ease-out,
+    width 0.3s ease-out;
+  will-change: transform, fill, opacity, width;
 }
 
-/* Footer stays visible if you want it in the viewport */
+/* Footer pinned at bottom of hero */
 footer {
   position: absolute;
   bottom: 0;
@@ -53,7 +59,7 @@ footer {
 }
 
 /* Responsive fallback for very short screens */
-@media (max-height: 500px) {
+@media (max-height: 500px), (max-width: 400px) {
   html, body {
     overflow-y: auto;
   }
@@ -62,6 +68,10 @@ footer {
     height: auto;
     min-height: 500px;
     padding: 2rem 1rem;
+  }
+
+  .logo {
+    width: 280px;
   }
 
   footer {
