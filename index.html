@@ -72,47 +72,58 @@
   <script src="js/custom.js"></script>
 <script>
   const logo = document.querySelector('.logo');
+  const bgPanorama = document.querySelector('.bg-panorama');
   let scrollProgress = 0; // range: 0 to 1
   let lastTouchY = null;
 
+  // Limit any value between min and max
   function clamp(val, min, max) {
     return Math.max(min, Math.min(max, val));
   }
 
- function updateLogo(progress) {
-  // Normalize from 0–1 to -1–1 centered around 0
-  const offsetNormalized = (progress - 0.5) * 2;
-  const clamped = clamp(offsetNormalized, -1, 1);
-  const absProgress = Math.abs(clamped);
+  // Update logo and background based on scroll progress
+  function updateLogo(progress) {
+    // Normalize progress from 0–1 to -1–1
+    const offsetNormalized = (progress - 0.5) * 2;
+    const clamped = clamp(offsetNormalized, -1, 1);
+    const absProgress = Math.abs(clamped);
 
-  // Horizontal translation (left/right)
-const maxShiftVW = 50; // adjust this to control how far it moves (in % of screen width)
-const offsetX = clamped * maxShiftVW;
-logo.style.transform = `translateX(${offsetX}vw)`;
+    // Horizontal logo movement (as % of viewport width)
+    const maxShiftVW = 50;
+    const offsetX = clamped * maxShiftVW;
+    logo.style.transform = `translateX(${offsetX}vw)`;
 
+    // Fill color interpolation from black to blue
+    const r = Math.round(29 + (0 - 29) * absProgress);
+    const g = Math.round(29 + (123 - 29) * absProgress);
+    const b = Math.round(27 + (255 - 27) * absProgress);
+    logo.style.fill = `rgb(${r}, ${g}, ${b})`;
 
-  // Fill color interpolation from black (#1d1d1b) to blue (#007BFF)
-  const r = Math.round(29 + (0 - 29) * absProgress);
-  const g = Math.round(29 + (123 - 29) * absProgress);
-  const b = Math.round(27 + (255 - 27) * absProgress);
-  logo.style.fill = `rgb(${r}, ${g}, ${b})`;
+    // Size: 400px to 200px
+    const size = 400 - (200 * absProgress);
+    logo.style.width = `${size}px`;
 
-  // Size: from 400 → 200
-  const size = 400 - (200 * absProgress);
-  logo.style.width = `${size}px`;
+    // Opacity: 1 → 0
+    logo.style.opacity = `${1 - absProgress}`;
 
-  // Opacity: from 1 → 0
-  logo.style.opacity = `${1 - absProgress}`;
-}
+    // Update parallax background movement
+    updateBackground(progress);
+  }
 
-  // Desktop scroll
+  // Background parallax shift
+  function updateBackground(progress) {
+    const offset = (0.5 - progress) * 100; // move opposite direction
+    bgPanorama.style.transform = `translateX(${offset}px)`;
+  }
+
+  // Handle mouse wheel scroll (desktop)
   window.addEventListener('wheel', (e) => {
     scrollProgress += e.deltaY * 0.0015;
     scrollProgress = clamp(scrollProgress, 0, 1);
     updateLogo(scrollProgress);
   }, { passive: false });
 
-  // Mobile touch scroll
+  // Handle touch scroll (mobile)
   window.addEventListener('touchstart', (e) => {
     if (e.touches.length === 1) {
       lastTouchY = e.touches[0].clientY;
@@ -123,15 +134,29 @@ logo.style.transform = `translateX(${offsetX}vw)`;
     if (e.touches.length === 1 && lastTouchY !== null) {
       const currentY = e.touches[0].clientY;
       const deltaY = lastTouchY - currentY;
-      scrollProgress += deltaY * 0.003; // slightly faster for touch
+      scrollProgress += deltaY * 0.003;
       scrollProgress = clamp(scrollProgress, 0, 1);
       updateLogo(scrollProgress);
       lastTouchY = currentY;
     }
   }, { passive: false });
 
-  // Block actual scroll just in case
+  // Prevent page from scrolling
   window.addEventListener('scroll', e => window.scrollTo(0, 0));
+
+  // Background panorama rotation
+  const bgImages = [
+    'images/pano1.jpg',
+    'images/pano2.jpg',
+    'images/pano3.jpg',
+    'images/pano4.jpg'
+  ];
+  let currentBgIndex = 0;
+
+  setInterval(() => {
+    currentBgIndex = (currentBgIndex + 1) % bgImages.length;
+    bgPanorama.style.backgroundImage = `url(${bgImages[currentBgIndex]})`;
+  }, 2 * 60 * 1000); // every 2 minutes
 </script>
 </body>
 </html>
