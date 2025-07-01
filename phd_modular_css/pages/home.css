@@ -2,7 +2,7 @@
    HOME PAGE STYLES
    ================================ */
 
-/* Prevent scrolling unless screen is very small */
+/* Lock viewport unless height is very small */
 html, body {
   height: 100%;
   margin: 0;
@@ -18,12 +18,10 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: sticky;
-  top: 0;
-  overflow: hidden;
   padding-top: 4rem;   /* space for nav */
   padding-bottom: 4rem; /* space for footer */
   text-align: center;
+  position: relative;
 }
 
 /* Logo container for scroll effect */
@@ -39,16 +37,22 @@ html, body {
   width: 180px;
   height: auto;
   fill: #1d1d1b;
-  transition: transform 0.1s linear, fill 0.2s ease-in-out;
+  transition: transform 0.2s ease-out, fill 0.3s ease-out;
   will-change: transform, fill;
 }
 
-/* Footer spacing ensured */
+/* Footer stays visible if you want it in the viewport */
 footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   z-index: 10;
+  background-color: transparent;
+  text-align: center;
+  padding: 1rem 0;
 }
 
-/* Responsive fallback for short screen heights */
+/* Responsive fallback for very short screens */
 @media (max-height: 500px) {
   html, body {
     overflow-y: auto;
@@ -58,5 +62,9 @@ footer {
     height: auto;
     min-height: 500px;
     padding: 2rem 1rem;
+  }
+
+  footer {
+    position: static;
   }
 }
