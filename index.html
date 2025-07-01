@@ -72,22 +72,32 @@
   <script src="js/custom.js"></script>
 <script>
   const logo = document.querySelector('.logo');
+  let scrollProgress = 0; // range: 0 to 1
 
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    const maxScroll = 300;
-    const progress = Math.min(scrollY / maxScroll, 1);
-
-    // Slide the logo left to right
+  function updateLogo(progress) {
     const offset = (progress - 0.5) * 100;
     logo.style.transform = `translateX(${offset}px)`;
 
-    // Fade logo color from black to gold
     const r = Math.round(29 + (212 - 29) * progress);
     const g = Math.round(29 + (175 - 29) * progress);
     const b = Math.round(27 + (55 - 27) * progress);
     logo.style.fill = `rgb(${r}, ${g}, ${b})`;
-  });
+  }
+
+  function clamp(val, min, max) {
+    return Math.max(min, Math.min(max, val));
+  }
+
+  window.addEventListener('wheel', (e) => {
+    // e.deltaY > 0 → scroll down → progress++
+    // e.deltaY < 0 → scroll up → progress--
+    scrollProgress += e.deltaY * 0.0015; // control speed
+    scrollProgress = clamp(scrollProgress, 0, 1);
+    updateLogo(scrollProgress);
+  }, { passive: false });
+
+  // optional: block actual scroll
+  window.addEventListener('scroll', e => window.scrollTo(0, 0));
 </script>
 </body>
 </html>
