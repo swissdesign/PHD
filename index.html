@@ -75,7 +75,7 @@
   let scrollProgress = 0; // range: 0 to 1
 
   function updateLogo(progress) {
-    const offset = (progress - 0.5) * 100;
+    const offset = (progress - 0.5) * 500;
     logo.style.transform = `translateX(${offset}px)`;
 
     const r = Math.round(29 + (212 - 29) * progress);

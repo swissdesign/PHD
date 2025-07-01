@@ -34,7 +34,7 @@ html, body {
 
 /* Main SVG logo */
 .logo {
-  width: 180px;
+  width: 300px;
   height: auto;
   fill: #1d1d1b;
   transition: transform 0.2s ease-out, fill 0.3s ease-out;
