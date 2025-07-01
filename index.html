@@ -70,5 +70,24 @@
   <script src="js/imagesloaded.min.js"></script>
   <script src="js/wow.min.js"></script>
   <script src="js/custom.js"></script>
+<script>
+  const logo = document.querySelector('.logo');
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const maxScroll = 300;
+    const progress = Math.min(scrollY / maxScroll, 1);
+
+    // Slide the logo left to right
+    const offset = (progress - 0.5) * 100;
+    logo.style.transform = `translateX(${offset}px)`;
+
+    // Fade logo color from black to gold
+    const r = Math.round(29 + (212 - 29) * progress);
+    const g = Math.round(29 + (175 - 29) * progress);
+    const b = Math.round(27 + (55 - 27) * progress);
+    logo.style.fill = `rgb(${r}, ${g}, ${b})`;
+  });
+</script>
 </body>
 </html>
