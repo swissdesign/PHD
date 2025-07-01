@@ -12,6 +12,21 @@ html, body {
   background-color: #fff;
 }
 
+/* bg - panorama */
+.bg-panorama {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300vw; /* long panoramic width */
+  height: 100vh;
+  background-image: url('images/pano1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -2;
+  transition: background-image 1s ease-in-out;
+}
+
 /* Hero Section */
 .hero {
   background: url('../assets/images/header-bg.jpg') center center / cover no-repeat;
