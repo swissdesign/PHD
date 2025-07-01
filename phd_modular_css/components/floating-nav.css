@@ -1,0 +1,28 @@
+.floating-nav {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0,0,0,0.6);
+  border-radius: 100px;
+  padding: 0.5rem 1rem;
+  z-index: 999;
+  display: flex;
+  gap: 1rem;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.floating-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+  transition: opacity 0.2s ease;
+}
+
+.floating-nav a.active {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.floating-nav a:hover {
+  opacity: 0.7;
+}
