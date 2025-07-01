@@ -93,14 +93,24 @@ const bgImages = [
   'assets/images/pano6.jpg'
 ];
 let currentBgIndex = 0;
-bgImage.src = bgImages[currentBgIndex]; // Set initial image
 
-// Rotate background image every 2 minutes
+// Initial image
+bgImage.src = bgImages[0];
+
+// Switch image every 10 seconds with 3s crossfade
 setInterval(() => {
-  currentBgIndex = (currentBgIndex + 1) % bgImages.length;
-  bgImage.src = bgImages[currentBgIndex];
-}, 2 * 60 * 1000);
+  // Fade out
+  bgImage.classList.add('fade-out');
 
+  setTimeout(() => {
+    // Switch image when faded out
+    currentBgIndex = (currentBgIndex + 1) % bgImages.length;
+    bgImage.src = bgImages[currentBgIndex];
+
+    // Fade in again
+    bgImage.classList.remove('fade-out');
+  }, 3000); // 3 seconds fade duration
+}, 10000); // 10 seconds total
 // Clamp helper
 function clamp(val, min, max) {
   return Math.max(min, Math.min(max, val));
