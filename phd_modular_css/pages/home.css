@@ -19,12 +19,14 @@ html, body {
   left: 0;
   width: 300vw; /* to give space for side panning */
   height: 100vh;
-  background-size: cover;
+background-size: contain;
+background-color: red; /* for debug visibility */
   background-position: center center;
   background-repeat: no-repeat;
   transition: background-image 1s ease-in-out;
   will-change: transform;
   z-index: -1;
+
 }
 
 /* Hero Section */
