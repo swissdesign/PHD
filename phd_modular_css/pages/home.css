@@ -30,7 +30,6 @@ background-color: red; /* for debug visibility */
 
 /* Hero Section */
 .hero {
-  background: url('../assets/images/header-bg.jpg') center center / cover no-repeat;
   height: 100vh;
   display: flex;
   align-items: center;
