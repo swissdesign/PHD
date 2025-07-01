@@ -73,30 +73,57 @@
 <script>
   const logo = document.querySelector('.logo');
   let scrollProgress = 0; // range: 0 to 1
-
-  function updateLogo(progress) {
-    const offset = (progress - 0.5) * 500;
-    logo.style.transform = `translateX(${offset}px)`;
-
-    const r = Math.round(29 + (212 - 29) * progress);
-    const g = Math.round(29 + (175 - 29) * progress);
-    const b = Math.round(27 + (55 - 27) * progress);
-    logo.style.fill = `rgb(${r}, ${g}, ${b})`;
-  }
+  let lastTouchY = null;
 
   function clamp(val, min, max) {
     return Math.max(min, Math.min(max, val));
   }
 
+  function updateLogo(progress) {
+    // horizontal slide
+    const offset = (progress - 0.5) * 500;
+    logo.style.transform = `translateX(${offset}px)`;
+
+    // fill color from black to blue
+    const r = Math.round(29 + (0 - 29) * progress);
+    const g = Math.round(29 + (123 - 29) * progress);
+    const b = Math.round(27 + (255 - 27) * progress);
+    logo.style.fill = `rgb(${r}, ${g}, ${b})`;
+
+    // size from 400 to 200
+    const size = 400 - (200 * progress);
+    logo.style.width = `${size}px`;
+
+    // opacity from 1 to 0
+    logo.style.opacity = `${1 - progress}`;
+  }
+
+  // Desktop scroll
   window.addEventListener('wheel', (e) => {
-    // e.deltaY > 0 → scroll down → progress++
-    // e.deltaY < 0 → scroll up → progress--
-    scrollProgress += e.deltaY * 0.0015; // control speed
+    scrollProgress += e.deltaY * 0.0015;
     scrollProgress = clamp(scrollProgress, 0, 1);
     updateLogo(scrollProgress);
   }, { passive: false });
 
-  // optional: block actual scroll
+  // Mobile touch scroll
+  window.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 1) {
+      lastTouchY = e.touches[0].clientY;
+    }
+  });
+
+  window.addEventListener('touchmove', (e) => {
+    if (e.touches.length === 1 && lastTouchY !== null) {
+      const currentY = e.touches[0].clientY;
+      const deltaY = lastTouchY - currentY;
+      scrollProgress += deltaY * 0.003; // slightly faster for touch
+      scrollProgress = clamp(scrollProgress, 0, 1);
+      updateLogo(scrollProgress);
+      lastTouchY = currentY;
+    }
+  }, { passive: false });
+
+  // Block actual scroll just in case
   window.addEventListener('scroll', e => window.scrollTo(0, 0));
 </script>
 </body>
