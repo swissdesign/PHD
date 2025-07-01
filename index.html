@@ -79,24 +79,29 @@
     return Math.max(min, Math.min(max, val));
   }
 
-  function updateLogo(progress) {
-    // horizontal slide
-    const offset = (progress - 0.5) * 500;
-    logo.style.transform = `translateX(${offset}px)`;
+ function updateLogo(progress) {
+  // Normalize from 0–1 to -1–1 centered around 0
+  const offsetNormalized = (progress - 0.5) * 2;
+  const clamped = clamp(offsetNormalized, -1, 1);
+  const absProgress = Math.abs(clamped);
 
-    // fill color from black to blue
-    const r = Math.round(29 + (0 - 29) * progress);
-    const g = Math.round(29 + (123 - 29) * progress);
-    const b = Math.round(27 + (255 - 27) * progress);
-    logo.style.fill = `rgb(${r}, ${g}, ${b})`;
+  // Horizontal translation (left/right)
+  const offsetX = clamped * 250;
+  logo.style.transform = `translateX(${offsetX}px)`;
 
-    // size from 400 to 200
-    const size = 400 - (200 * progress);
-    logo.style.width = `${size}px`;
+  // Fill color interpolation from black (#1d1d1b) to blue (#007BFF)
+  const r = Math.round(29 + (0 - 29) * absProgress);
+  const g = Math.round(29 + (123 - 29) * absProgress);
+  const b = Math.round(27 + (255 - 27) * absProgress);
+  logo.style.fill = `rgb(${r}, ${g}, ${b})`;
 
-    // opacity from 1 to 0
-    logo.style.opacity = `${1 - progress}`;
-  }
+  // Size: from 400 → 200
+  const size = 400 - (200 * absProgress);
+  logo.style.width = `${size}px`;
+
+  // Opacity: from 1 → 0
+  logo.style.opacity = `${1 - absProgress}`;
+}
 
   // Desktop scroll
   window.addEventListener('wheel', (e) => {
