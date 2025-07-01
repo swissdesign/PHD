@@ -16,20 +16,18 @@ html, body {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
   width: 100vw;
+  height: 100vh;
   overflow: hidden;
   z-index: -1;
 }
 
-.bg-panorama img {
+#bg-image {
   height: 100vh;
   width: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: transform 0.4s ease;
-  will-change: transform;
+  min-width: 200vw; /* ensures it's wider than viewport */
+  transition: transform 0.1s linear;
+  object-fit: cover;
 }
 
 /* Hero Section */

@@ -147,29 +147,33 @@
   // Prevent page from scrolling
   window.addEventListener('scroll', e => window.scrollTo(0, 0));
 
-    const bgImage = document.getElementById('bg-image');
-  const bgImages = [
-    'assets/images/pano1.jpg',
-    'assets/images/pano2.jpg',
-    'assets/images/pano3.jpg',
-    'assets/images/pano4.jpg'
-  ];
-  let currentBgIndex = 0;
+   // JavaScript (replace your bg logic with this)
+const bgPanorama = document.querySelector('.bg-panorama');
+const bgImage = document.getElementById('bg-image');
 
-  // Set initial image
-  bgImage.src = bgImages[0];
+const bgImages = [
+  'assets/images/pano1.jpg',
+  'assets/images/pano2.jpg',
+  'assets/images/pano3.jpg',
+  'assets/images/pano4.jpg'
+];
+let currentBgIndex = 0;
 
-  // Switch image every 2 minutes
-  setInterval(() => {
-    currentBgIndex = (currentBgIndex + 1) % bgImages.length;
-    bgImage.src = bgImages[currentBgIndex];
-  }, 2 * 60 * 1000);
+// Initial image
+bgImage.src = bgImages[0];
 
-  // Update parallax background movement
-  function updateBackground(progress) {
-    const offset = (0.5 - progress) * 100; // adjust this factor if needed
-    bgImage.style.transform = `translateX(${offset}vw)`;
-  }
+// Switch background every 2 minutes
+setInterval(() => {
+  currentBgIndex = (currentBgIndex + 1) % bgImages.length;
+  bgImage.src = bgImages[currentBgIndex];
+}, 2 * 60 * 1000);
+
+// Update background based on scroll
+function updateBackground(progress) {
+  const maxOffset = bgImage.offsetWidth - window.innerWidth;
+  const offset = (progress - 0.5) * maxOffset * 2;
+  bgImage.style.transform = `translateX(${-offset}px)`;
+}
 </script>
 </body>
 </html>
