@@ -16,15 +16,15 @@ html, body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 300vw; /* to give space for side panning */
+  width: 300vw;
   height: 100vh;
-background-size: contain;
-background-color: red; /* for debug visibility */
+  background-image: url('../assets/images/pano1.jpg');
+  background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  transition: background-image 1s ease-in-out;
-  will-change: transform;
   z-index: -1;
+  transition: background-image 1s ease-in-out;
+}
 
 }
 
