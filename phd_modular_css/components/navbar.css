@@ -32,7 +32,7 @@
   width: auto;
   display: block;
   margin-top: 8px;
-  color: rgba(255, 255, 255, 0.6);
+ fill: rgba(255, 255, 255, 0.6);
 }
 
 .nav-menu {
