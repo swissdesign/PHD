@@ -67,9 +67,9 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform-origin: center -16vmin; /* adjust radius */
+  transform-origin: center -18vmin; /* adjust radius */
   transform: rotate(calc(var(--i) * 72deg));
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   color: #000;
   text-transform: uppercase;
   letter-spacing: 0.05em;
