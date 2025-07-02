@@ -137,7 +137,7 @@ height: calc(50vh - 2rem);
     height: 66vh;
   }
   .contact-section {
-    height: 34vh; /* Not 33vh to account for rounding */
+    height: 33vh; /* Not 33vh to account for rounding */
   }
 
   .portfolio-item {
