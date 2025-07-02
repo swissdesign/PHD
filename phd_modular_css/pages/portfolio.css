@@ -1,4 +1,4 @@
-/* Reset & Base */
+/* === Layout & Base === */
 body {
   font-family: 'Source Sans Pro', sans-serif;
   margin: 0;
@@ -11,19 +11,18 @@ body {
   scroll-behavior: smooth;
 }
 
-main.portfolio-grid {
+main {
   display: flex;
   flex-direction: row;
   height: 100vh;
   width: max-content;
-  overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   gap: 2rem;
   padding: 2rem;
 }
 
-/* Individual item layout */
+/* === Portfolio Items === */
 .portfolio-item {
   flex: 0 0 auto;
   height: 100vh;
@@ -32,18 +31,17 @@ main.portfolio-grid {
   scroll-snap-align: start;
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   background: #000;
 }
 
-/* Image styling */
 .portfolio-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* Title and caption */
+/* === Caption Overlay === */
 .portfolio-caption {
   position: absolute;
   bottom: 0;
@@ -68,15 +66,7 @@ main.portfolio-grid {
   color: #ddd;
 }
 
-/* Optional: hide vertical scrollbar */
-html, body {
-  scrollbar-width: none; /* Firefox */
-}
-body::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
-}
-
-/* Footer stays fixed at bottom */
+/* === Footer === */
 footer {
   position: fixed;
   bottom: 0;
@@ -87,4 +77,12 @@ footer {
   color: #fff;
   text-align: center;
   z-index: 10;
+}
+
+/* === Hide Scrollbars === */
+html, body {
+  scrollbar-width: none; /* Firefox */
+}
+body::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
 }
