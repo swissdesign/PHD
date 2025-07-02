@@ -184,6 +184,7 @@
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const track = document.querySelector('.scroll-track');
+  const floatingNav = document.querySelector('.floating-nav');
   let scrollProgress = 0;
   let lastTouchY = null;
 
@@ -196,14 +197,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const maxScroll = track.scrollWidth - window.innerWidth;
     scrollProgress = clamp(scrollProgress, 0, maxScroll);
     track.style.transform = `translateX(${-scrollProgress}px)`;
+    
+    // Scroll progress ratio for nav animation (0 to 1)
+    const progressRatio = scrollProgress / maxScroll;
+    updateFloatingNav(progressRatio);
   }
 
+  function updateFloatingNav(progressRatio) {
+    const maxDrift = 60; // max pixels to float downward
+    const yOffset = progressRatio * maxDrift;
+    floatingNav.style.transform = `translateY(${yOffset}px)`;
+  }
+
+  // Mouse wheel
   window.addEventListener('wheel', e => {
     e.preventDefault();
     scrollProgress += e.deltaY * 0.5;
     updateScroll();
   }, { passive: false });
 
+  // Touch scroll
   window.addEventListener('touchstart', e => {
     if (e.touches.length === 1) {
       lastTouchY = e.touches[0].clientY;
@@ -219,6 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, { passive: false });
 
+  // Prevent native scroll
   window.addEventListener('scroll', () => window.scrollTo(0, 0));
 });
 </script>
