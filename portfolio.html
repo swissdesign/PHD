@@ -21,8 +21,8 @@
 </nav>
 </header>
 <!-- portfolio scroll sideways funktion -->
-<div class="scroll-container">
-  <main>
+<main class="scroll-sim">
+  <div class="scroll-track">
   <!-- Repeat this block per project -->
   <article class="portfolio-item">
     <a href="projects/project-name.html">
@@ -174,12 +174,13 @@
     </a>
   </article>
   <!-- ... -->
+  </div>
 </main>
 
 <footer>
   <p>&copy; 2025 P. Heiniger Design</p>
 </footer>
-</div>
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.scroll-container');
