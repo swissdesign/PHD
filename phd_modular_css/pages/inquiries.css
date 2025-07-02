@@ -16,7 +16,7 @@ body::-webkit-scrollbar {
 /* === Simulated Scroll Wrapper === */
 .scroll-sim {
   overflow: hidden;
-  height: 100vh;
+  height: 50vh;
   position: relative;
 }
 
@@ -33,7 +33,7 @@ body::-webkit-scrollbar {
 /* === Portfolio Items === */
 .portfolio-item {
   flex: 0 0 auto;
-  height: calc(100dvh - 2rem);
+  height: calc(50dvh - 2rem);
   aspect-ratio: 1 / 1;
   scroll-snap-align: start;
   position: relative;
