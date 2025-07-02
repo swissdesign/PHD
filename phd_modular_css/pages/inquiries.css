@@ -1,6 +1,6 @@
 /* === Base Reset === */
 html, body {
-  height: 100vh - 2rem;
+  height: 100vh - 1rem;
   overflow: hidden; /* Fully disable vertical scroll */
   margin: 0;
   padding: 0;
