@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function updateFloatingNav(progressRatio) {
-    const maxDrift = 60; // max pixels to float downward
+    const maxDrift = 200; // max pixels to float downward
     const yOffset = progressRatio * maxDrift;
     floatingNav.style.transform = `translateY(${yOffset}px)`;
   }
