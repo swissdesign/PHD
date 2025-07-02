@@ -1,7 +1,7 @@
 /* === Base Reset === */
 html, body {
-  height: calc(100dvh);
-  overflow: hidden; /* Fully disable vertical scroll */
+  height: 100dvh;
+  overflow: hidden;
   margin: 0;
   padding: 0;
   font-family: 'Source Sans Pro', sans-serif;
@@ -22,8 +22,9 @@ body::-webkit-scrollbar {
 /* === Simulated Scroll Wrapper === */
 .scroll-sim {
   overflow: hidden;
-  height: calc(50dvh - 2);
+  height: 50dvh;
   position: relative;
+  padding: 1rem;
 }
 
 /* === Animated Horizontal Track === */
@@ -33,7 +34,6 @@ body::-webkit-scrollbar {
   gap: 1rem;
   will-change: transform;
   transition: transform 0.3s ease-out;
-  padding: 1rem;
 }
 
 /* === Portfolio Items === */
@@ -93,14 +93,14 @@ footer {
   z-index: 10;
 }
 
-/* Contact Section */
+/* === Contact Section === */
 .contact-section {
-height: calc(50vh - 2rem);
+  height: 50dvh;
+  padding: 2rem 1rem;
   background: #f4f4f4;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
 }
 
 .contact-form {
@@ -129,15 +129,7 @@ height: calc(50vh - 2rem);
   cursor: pointer;
 }
 
-/* Default (Mobile First): 50/50 split */
-.scroll-sim {
-  height: 50vh - 2rem;
-}
-.contact-section {
-  height: 50vh - 2rem;
-}
-
-/* === Desktop Split: 66/33 viewport height === */
+/* === Desktop Split: 66/34 === */
 @media (min-width: 768px) {
   .scroll-sim {
     height: 66dvh;
