@@ -21,7 +21,7 @@
 </nav>
 </header>
 <!-- portfolio scroll sideways funktion -->
-<main>
+<main class="scroll-container">
   <!-- Repeat this block per project -->
   <article class="portfolio-item">
     <a href="projects/project-name.html">
@@ -180,7 +180,7 @@
 </footer>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  const container = document.querySelector('main');
+  const container = document.querySelector('.scroll-container'); // <--- CHANGED HERE
 
   window.addEventListener('wheel', function(e) {
     e.preventDefault();
