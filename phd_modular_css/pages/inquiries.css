@@ -1,6 +1,6 @@
 /* === Base Reset === */
 html, body {
-  height: 100vh - 4rem;
+  height: calc(100dvh - 4rem);
   overflow: hidden; /* Fully disable vertical scroll */
   margin: 0;
   padding: 0;
@@ -16,7 +16,7 @@ body::-webkit-scrollbar {
 /* === Simulated Scroll Wrapper === */
 .scroll-sim {
   overflow: hidden;
-  height: 50vh;
+  height: calc(50dvh - 2rem);
   position: relative;
 }
 
