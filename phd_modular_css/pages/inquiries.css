@@ -13,6 +13,12 @@ body::-webkit-scrollbar {
   display: none; /* Chrome/Safari */
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* === Simulated Scroll Wrapper === */
 .scroll-sim {
   overflow: hidden;
