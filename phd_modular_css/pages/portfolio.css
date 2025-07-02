@@ -1,10 +1,13 @@
+/* === Base Styles === */
 body {
   font-family: 'Source Sans Pro', sans-serif;
   margin: 0;
   padding: 0;
   background: #f9f9f9;
+  scroll-behavior: smooth; /* Optional smooth scroll */
 }
 
+/* === Header Section (if used) === */
 .hero {
   text-align: center;
   padding: 4rem 2rem;
@@ -12,6 +15,7 @@ body {
   color: #fff;
 }
 
+/* === Button Styles (reusable) === */
 .button {
   background: #d32f2f;
   color: #fff;
@@ -23,25 +27,50 @@ body {
   margin-top: 1rem;
 }
 
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
+/* === Horizontal Scrolling Portfolio === */
+.portfolio-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Inner container holds all images */
+.scroll-container {
+  display: flex;
+  gap: 2rem;
   padding: 2rem;
+  height: 90vh;
+}
+
+/* Portfolio Item Structure */
+.portfolio-item {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .portfolio-item img {
-  width: 100%;
+  max-height: 80vh;
+  width: auto;
   height: auto;
   border-radius: 0.5rem;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
+  object-fit: cover;
 }
 
 .portfolio-item img:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
+/* === Footer === */
 footer {
   text-align: center;
   padding: 2rem;
