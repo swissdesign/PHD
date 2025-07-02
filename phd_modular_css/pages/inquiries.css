@@ -62,7 +62,7 @@ body::-webkit-scrollbar {
   left: 0;
   width: 100%;
   padding: 1rem;
-  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  background: linear-gradient(to top, rgba(0,0,0,0.2), transparent);
   color: #fff;
 }
 
