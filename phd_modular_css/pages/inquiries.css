@@ -122,3 +122,25 @@ footer {
   font-size: 1rem;
   cursor: pointer;
 }
+
+/* Default (Mobile First): 50/50 split */
+.scroll-sim {
+  height: 50vh;
+}
+.contact-section {
+  height: 50vh;
+}
+
+/* === Desktop Split: 66/33 viewport height === */
+@media (min-width: 768px) {
+  .scroll-sim {
+    height: 66vh;
+  }
+  .contact-section {
+    height: 34vh; /* Not 33vh to account for rounding */
+  }
+
+  .portfolio-item {
+    height: calc(66vh - 2rem); /* update tile height to fill new scroll area */
+  }
+}
