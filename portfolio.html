@@ -118,6 +118,29 @@
 <footer>
   <p>&copy; 2025 P. Heiniger Design</p>
 </footer>
+<script>
+  const container = document.querySelector('main');
 
+  // Mouse wheel horizontal scroll
+  window.addEventListener('wheel', function(e) {
+    e.preventDefault();
+    container.scrollLeft += e.deltaY;
+  }, { passive: false });
+
+  // Touch swipe horizontal scroll
+  let startX;
+  let scrollLeft;
+
+  container.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].pageX - container.offsetLeft;
+    scrollLeft = container.scrollLeft;
+  });
+
+  container.addEventListener('touchmove', (e) => {
+    const x = e.touches[0].pageX - container.offsetLeft;
+    const walk = (startX - x);
+    container.scrollLeft = scrollLeft + walk;
+  });
+</script>
 </body>
 </html>
