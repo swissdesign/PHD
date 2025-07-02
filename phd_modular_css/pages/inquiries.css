@@ -89,7 +89,7 @@ footer {
 
 /* Contact Section */
 .contact-section {
-  height: 50vh;
+  height: 50vh - 2rem;
   background: #f4f4f4;
   display: flex;
   align-items: center;
@@ -125,10 +125,10 @@ footer {
 
 /* Default (Mobile First): 50/50 split */
 .scroll-sim {
-  height: 50vh;
+  height: 50vh - 2rem;
 }
 .contact-section {
-  height: 50vh;
+  height: 50vh - 2rem;
 }
 
 /* === Desktop Split: 66/33 viewport height === */
