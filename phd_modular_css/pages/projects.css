@@ -51,30 +51,6 @@ body {
   color: #333;
 }
 
-/* === Rotating Keywords === */
-.circle-keywords {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-  animation: rotateKeywords 20s linear infinite;
-}
-
-.circle-keywords span {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform-origin: center -18vmin; /* adjust radius */
-  transform: rotate(calc(var(--i) * 72deg));
-  font-size: 0.9rem;
-  color: #000;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
 .keywords-inline {
   display: flex;
   flex-wrap: wrap;
