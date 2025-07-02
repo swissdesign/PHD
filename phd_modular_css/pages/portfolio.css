@@ -33,7 +33,7 @@ body::-webkit-scrollbar {
 /* === Portfolio Items === */
 .portfolio-item {
   flex: 0 0 auto;
-  height: calc(100dvh - 5rem);
+  height: calc(100dvh - 4rem);
   aspect-ratio: 9 / 16;
   scroll-snap-align: start;
   position: relative;
