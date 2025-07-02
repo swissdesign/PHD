@@ -183,43 +183,43 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const container = document.querySelector('.scroll-container');
+  const track = document.querySelector('.scroll-track');
+  let scrollProgress = 0;
+  let lastTouchY = null;
 
-  // Convert mouse wheel scroll (Y) ➝ horizontal scroll
-  container.addEventListener('wheel', function(e) {
+  // Clamp helper
+  function clamp(val, min, max) {
+    return Math.max(min, Math.min(max, val));
+  }
+
+  function updateScroll() {
+    const maxScroll = track.scrollWidth - window.innerWidth;
+    scrollProgress = clamp(scrollProgress, 0, maxScroll);
+    track.style.transform = `translateX(${-scrollProgress}px)`;
+  }
+
+  window.addEventListener('wheel', e => {
     e.preventDefault();
-    container.scrollLeft += e.deltaY;
+    scrollProgress += e.deltaY * 0.5;
+    updateScroll();
   }, { passive: false });
 
-  // Enable mouse drag to scroll
-  let isDown = false;
-  let startX;
-  let scrollLeft;
-
-  container.addEventListener('mousedown', (e) => {
-    isDown = true;
-    container.classList.add('dragging');
-    startX = e.pageX - container.offsetLeft;
-    scrollLeft = container.scrollLeft;
+  window.addEventListener('touchstart', e => {
+    if (e.touches.length === 1) {
+      lastTouchY = e.touches[0].clientY;
+    }
   });
 
-  container.addEventListener('mouseleave', () => {
-    isDown = false;
-    container.classList.remove('dragging');
-  });
+  window.addEventListener('touchmove', e => {
+    if (e.touches.length === 1 && lastTouchY !== null) {
+      const deltaY = lastTouchY - e.touches[0].clientY;
+      scrollProgress += deltaY * 1.2;
+      updateScroll();
+      lastTouchY = e.touches[0].clientY;
+    }
+  }, { passive: false });
 
-  container.addEventListener('mouseup', () => {
-    isDown = false;
-    container.classList.remove('dragging');
-  });
-
-  container.addEventListener('mousemove', (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - container.offsetLeft;
-    const walk = (x - startX) * 1.5; // speed multiplier
-    container.scrollLeft = scrollLeft - walk;
-  });
+  window.addEventListener('scroll', () => window.scrollTo(0, 0));
 });
 </script>
 </body>

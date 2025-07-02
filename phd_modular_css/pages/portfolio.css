@@ -13,40 +13,34 @@ body::-webkit-scrollbar {
   display: none; /* Chrome/Safari */
 }
 
-/* === Scroll Container === */
-.scroll-container {
-  display: flex;
-  flex-direction: row;
+/* === Simulated Scroll Wrapper === */
+.scroll-sim {
+  overflow: hidden;
   height: 100vh;
-  width: 100vw;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  touch-action: pan-x; /* Force horizontal-only touch swipe */
+  position: relative;
 }
 
-/* === Main Content Row === */
-main {
+/* === Animated Horizontal Track === */
+.scroll-track {
   display: flex;
   flex-direction: row;
   gap: 2rem;
+  will-change: transform;
+  transition: transform 0.1s ease-out;
   padding: 2rem;
-  height: 100%;
-  width: max-content;
 }
 
-/* === Portfolio Item === */
+/* === Portfolio Items === */
 .portfolio-item {
   flex: 0 0 auto;
-  height: 100%;
+  height: calc(100vh - 4rem);
   aspect-ratio: 9 / 16;
   scroll-snap-align: start;
   position: relative;
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   background: #000;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .portfolio-item img {
