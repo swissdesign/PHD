@@ -24,6 +24,18 @@ main {
   overflow-y: hidden;
 }
 
+/* === scroll container === */
+
+.scroll-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
 /* === Portfolio Items === */
 .portfolio-item {
   flex: 0 0 auto;
