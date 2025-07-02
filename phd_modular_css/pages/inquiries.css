@@ -16,7 +16,7 @@ body::-webkit-scrollbar {
 /* === Simulated Scroll Wrapper === */
 .scroll-sim {
   overflow: hidden;
-  height: calc(50dvh);
+  height: calc(50dvh - 2);
   position: relative;
 }
 
