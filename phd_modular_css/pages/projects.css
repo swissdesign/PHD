@@ -75,6 +75,23 @@ body {
   letter-spacing: 0.05em;
 }
 
+.keywords-inline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.keywords-inline span {
+  background: black;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
 @keyframes rotateKeywords {
   0%   { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
