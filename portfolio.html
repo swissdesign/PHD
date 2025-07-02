@@ -180,11 +180,13 @@
 </footer>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  const container = document.querySelector('.scroll-container'); // <--- CHANGED HERE
+  const container = document.querySelector('.scroll-container');
 
   window.addEventListener('wheel', function(e) {
-    e.preventDefault();
-    container.scrollLeft += e.deltaY;
+    if (e.deltaY !== 0) {
+      e.preventDefault();
+      container.scrollLeft += e.deltaY;
+    }
   }, { passive: false });
 
   let startX;
