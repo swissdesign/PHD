@@ -182,24 +182,26 @@
 document.addEventListener('DOMContentLoaded', function () {
   const container = document.querySelector('.scroll-container');
 
+  // Convert vertical wheel to horizontal scroll
   window.addEventListener('wheel', function(e) {
-    if (e.deltaY !== 0) {
+    // Only convert when mouse is over the container
+    if (e.target.closest('.scroll-container')) {
       e.preventDefault();
       container.scrollLeft += e.deltaY;
     }
   }, { passive: false });
 
-  let startX;
-  let scrollLeft;
+  // Touch support
+  let startX, scrollLeft;
 
   container.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].pageX - container.offsetLeft;
+    startX = e.touches[0].pageX;
     scrollLeft = container.scrollLeft;
   });
 
   container.addEventListener('touchmove', (e) => {
-    const x = e.touches[0].pageX - container.offsetLeft;
-    const walk = (startX - x);
+    const x = e.touches[0].pageX;
+    const walk = startX - x;
     container.scrollLeft = scrollLeft + walk;
   });
 });

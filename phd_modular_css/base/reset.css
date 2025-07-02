@@ -9,7 +9,8 @@
 
 html, body {
   width: 100%;
-  overflow-x: hidden;
+  /* REMOVE or comment out overflow-x: hidden */
+  /* overflow-x: hidden; */
   font-size: 100%;
   font-style: normal;
   font-family: 'Source Sans Pro', sans-serif;
