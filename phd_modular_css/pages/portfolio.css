@@ -26,7 +26,7 @@ body::-webkit-scrollbar {
   flex-direction: row;
   gap: 1rem;
   will-change: transform;
-  transition: transform 0.1s ease-out;
+  transition: transform 0.3s ease-out;
   padding: 1rem;
 }
 
@@ -44,8 +44,8 @@ body::-webkit-scrollbar {
 }
 
 .portfolio-item img {
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
   object-fit: cover;
 }
 
