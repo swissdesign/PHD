@@ -21,7 +21,8 @@
 </nav>
 </header>
 <!-- portfolio scroll sideways funktion -->
-<main class="scroll-container">
+<div class="scroll-container">
+  <main>
   <!-- Repeat this block per project -->
   <article class="portfolio-item">
     <a href="projects/project-name.html">
@@ -178,31 +179,45 @@
 <footer>
   <p>&copy; 2025 P. Heiniger Design</p>
 </footer>
+</div>
 <script>
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.scroll-container');
 
-  // Convert vertical wheel to horizontal scroll
-  window.addEventListener('wheel', function(e) {
-    // Only convert when mouse is over the container
-    if (e.target.closest('.scroll-container')) {
-      e.preventDefault();
-      container.scrollLeft += e.deltaY;
-    }
+  // Convert mouse wheel scroll (Y) ➝ horizontal scroll
+  container.addEventListener('wheel', function(e) {
+    e.preventDefault();
+    container.scrollLeft += e.deltaY;
   }, { passive: false });
 
-  // Touch support
-  let startX, scrollLeft;
+  // Enable mouse drag to scroll
+  let isDown = false;
+  let startX;
+  let scrollLeft;
 
-  container.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].pageX;
+  container.addEventListener('mousedown', (e) => {
+    isDown = true;
+    container.classList.add('dragging');
+    startX = e.pageX - container.offsetLeft;
     scrollLeft = container.scrollLeft;
   });
 
-  container.addEventListener('touchmove', (e) => {
-    const x = e.touches[0].pageX;
-    const walk = startX - x;
-    container.scrollLeft = scrollLeft + walk;
+  container.addEventListener('mouseleave', () => {
+    isDown = false;
+    container.classList.remove('dragging');
+  });
+
+  container.addEventListener('mouseup', () => {
+    isDown = false;
+    container.classList.remove('dragging');
+  });
+
+  container.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - container.offsetLeft;
+    const walk = (x - startX) * 1.5; // speed multiplier
+    container.scrollLeft = scrollLeft - walk;
   });
 });
 </script>
