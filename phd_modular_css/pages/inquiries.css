@@ -46,7 +46,6 @@ body::-webkit-scrollbar {
   border-radius: 1rem;
   overflow: hidden;
   background: #000;
-  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
 }
 
 .portfolio-item img {
@@ -62,7 +61,7 @@ body::-webkit-scrollbar {
   left: 0;
   width: 100%;
   padding: 1rem;
-  background: linear-gradient(to top, rgba(0,0,0,0.2), transparent);
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
   color: #fff;
 }
 
