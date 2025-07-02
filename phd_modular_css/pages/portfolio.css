@@ -24,10 +24,10 @@ body::-webkit-scrollbar {
 .scroll-track {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  gap: 1rem;
   will-change: transform;
   transition: transform 0.1s ease-out;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 /* === Portfolio Items === */
