@@ -2,127 +2,243 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>P. Heiniger Design – Inquiries</title>
-  <meta name="description" content="Submit inquiries for fixed-price design services – Brand, Print, Web, and more." />
-
-  <!-- Modular CSS Structure -->
-  <link rel="stylesheet" href="./phd_modular_css/animations/pulse.css" />
   <link rel="stylesheet" href="./phd_modular_css/base/reset.css" />
   <link rel="stylesheet" href="./phd_modular_css/base/typography.css" />
-  <link rel="stylesheet" href="./phd_modular_css/layout/container.css" />
-  <link rel="stylesheet" href="./phd_modular_css/layout/grid.css" />
-  <link rel="stylesheet" href="./phd_modular_css/components/navbar.css" />
-  <link rel="stylesheet" href="./phd_modular_css/components/buttons.css" />
-  <link rel="stylesheet" href="./phd_modular_css/components/footer.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="./phd_modular_css/components/floating-nav.css" />
   <link rel="stylesheet" href="./phd_modular_css/pages/inquiries.css" />
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="layout">
+  
+<header>
+<nav class="floating-nav">
+  <a href="index.html">Home</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="inquiries.html"class="active">Inquiries</a>
+</nav>
+</header>
+<!-- portfolio scroll sideways funktion -->
+<main class="scroll-sim">
+  <div class="scroll-track">
+  <!-- Repeat this block per project -->
+  <article class="portfolio-item">
+    <a href="projects/project-name.html">
+      <img src="assets/images/portfolio/pic02.jpg" alt="Pic02" />
+       <div class="portfolio-caption">
+      <h2>Project Title</h2>
+      <p>Short description</p>
+    </div>
+    </a>
+  </article>
 
-    <header>
-      <nav class="nav">
-        <div class="container nav-flex">
-          <a href="index.html" class="brand">
-            <img src="./assets/images/phd-logo.svg" alt="P. Heiniger Design Logo" class="logo-nav" />
-          </a>
-          <ul class="nav-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="inquiries.html" class="active">Inquiries</a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+  <article class="portfolio-item">
+    <a href="projects/prj_001.html">
+      <img src="assets/images/portfolio/pic01.jpg" alt="Pic01" />
+       <div class="portfolio-caption">
+      <h2>Project Title</h2>
+      <p>Short description</p>
+    </div>
+    </a>
+  </article>
 
-    <main class="inquiries-main">
-      <section class="hero minimal-hero">
-        <div class="container">
-          <h1>Inquiries</h1>
-          <p>Money is just a proxy for value. Here's how I deliver it.</p>
-        </div>
-      </section>
+   <article class="portfolio-item">
+    <a href="projects/prj_001.html">
+      <img src="assets/images/portfolio/pic03.jpg" alt="Pic03" />
+       <div class="portfolio-caption">
+      <h2>Project Title</h2>
+      <p>Short description</p>
+    </div>
+    </a>
+  </article>
 
-      <section class="offerings">
-        <div class="container">
-          <h2>Fixed-Price Design Services</h2>
-          <p class="lead">Choose the service that fits your need. Fewer emails. More progress.</p>
+     <article class="portfolio-item">
+    <a href="projects/prj_001.html">
+      <img src="assets/images/portfolio/pic04.jpg" alt="Pic04" />
+       <div class="portfolio-caption">
+      <h2>Project Title</h2>
+      <p>Short description</p>
+    </div>
+    </a>
+  </article>
 
-  <div class="offers-grid">
-          <article class="offer-card">
-            <h3>Brand Setup Sprint</h3>
-            <p class="result">5-page Brand Guideline PDF + logo cleanup</p>
-            <p class="price">CHF 2’400</p>
-          </article>
+    <article class="portfolio-item">
+    <a href="projects/prj_001.html">
+      <img src="assets/images/portfolio/pic05.jpg" alt="Pic05" />
+       <div class="portfolio-caption">
+      <h2>Project Title</h2>
+      <p>Short description</p>
+    </div>
+    </a>
+  </article>
 
-          <article class="offer-card">
-            <h3>Conversion Design Booster</h3>
-            <p class="result">Redesign of key Shopify or landing pages to improve conversion</p>
-            <p class="price">CHF 3’200</p>
-          </article>
+    <article class="portfolio-item">
+    <a href="projects/prj_001.html">
+      <img src="assets/images/portfolio/pic07.jpg" alt="Pic07" />
+       <div class="portfolio-caption">
+      <h2>Project Title</h2>
+      <p>Short description</p>
+    </div>
+    </a>
+  </article>
 
-          <article class="offer-card">
-            <h3>Print Shop Revamp</h3>
-            <p class="result">Rebranding + flyer/banner/poster templates + Insta starter pack</p>
-            <p class="price">CHF 2’800</p>
-          </article>
+    <article class="portfolio-item">
+    <a href="projects/prj_001.html">
+      <img src="assets/images/portfolio/pic08.jpg" alt="Pic08" />
+       <div class="portfolio-caption">
+      <h2>Project Title</h2>
+      <p>Short description</p>
+    </div>
+    </a>
+  </article>
 
-          <article class="offer-card">
-            <h3>Event Design Pack</h3>
-            <p class="result">Poster, social posts, program booklet, signage design</p>
-            <p class="price">CHF 1’500</p>
-          </article>
+    <article class="portfolio-item">
+    <a href="projects/prj_001.html">
+      <img src="assets/images/portfolio/pic09.jpg" alt="Pic09" />
+       <div class="portfolio-caption">
+      <h2>Project Title</h2>
+      <p>Short description</p>
+    </div>
+    </a>
+  </article>
 
-          <article class="offer-card">
-            <h3>Mini Rebrand for Vereine</h3>
-            <p class="result">Logo cleanup + flyer template + email signature</p>
-            <p class="price">CHF 980</p>
-          </article>
-        </div>
-      </div>
-    </section>
+    <article class="portfolio-item">
+    <a href="projects/prj_001.html">
+      <img src="assets/images/portfolio/pic10.jpg" alt="Pic10" />
+       <div class="portfolio-caption">
+      <h2>Project Title</h2>
+      <p>Short description</p>
+    </div>
+    </a>
+  </article>
 
-      <section class="inquiry-form">
-        <div class="container">
-          <h2>Send an Inquiry</h2>
-          <p>Tell me what you need. I'll get back to you within 1–2 working days.</p>
+    <article class="portfolio-item">
+    <a href="projects/prj_001.html">
+      <img src="assets/images/portfolio/pic11.jpg" alt="Pic11" />
+       <div class="portfolio-caption">
+      <h2>Project Title</h2>
+      <p>Short description</p>
+    </div>
+    </a>
+  </article>
 
-           <section class="inquiry-form">
-      <div class="container">
-        <h2>Send an Inquiry</h2>
-        <p>Tell me what you need. I'll get back to you within 1–2 working days.</p>
+    <article class="portfolio-item">
+    <a href="projects/prj_001.html">
+      <img src="assets/images/portfolio/pic12.jpg" alt="Pic12" />
+       <div class="portfolio-caption">
+      <h2>Project Title</h2>
+      <p>Short description</p>
+    </div>
+    </a>
+  </article>
 
-        <form id="inquiry-form" method="post" action="#">
-          <input name="name" type="text" placeholder="Your Name" required />
-          <input name="email" type="email" placeholder="Your Email" required />
-          <select name="offer">
-            <option value="">Choose a service...</option>
-            <option value="brand-setup">Brand Setup Sprint</option>
-            <option value="conversion-booster">Conversion Design Booster</option>
-            <option value="print-revamp">Print Shop Revamp</option>
-            <option value="event-design">Event Design Pack</option>
-            <option value="mini-rebrand">Mini Rebrand for Vereine</option>
-            <option value="custom">Something else...</option>
-          </select>
-          <textarea name="message" rows="4" placeholder="Short description (optional)"></textarea>
-          <button type="submit">Submit Inquiry</button>
-        </form>
-      </div>
-    </section>
-  </main>
+    <article class="portfolio-item">
+    <a href="projects/prj_001.html">
+      <img src="assets/images/portfolio/pic13.jpg" alt="Pic13" />
+       <div class="portfolio-caption">
+      <h2>Project Title</h2>
+      <p>Short description</p>
+    </div>
+    </a>
+  </article>
 
-    <footer>
-      <div class="container">
-        <p>&copy; 2025 P. Heiniger Design – Built with clean hands & dirty keyboard</p>
-        <ul class="social-icons">
-          <li><a href="#">FB</a></li>
-          <li><a href="#">TW</a></li>
-          <li><a href="#">IG</a></li>
-          <li><a href="#">GH</a></li>
-        </ul>
-      </div>
-    </footer>
+    <article class="portfolio-item">
+    <a href="projects/prj_001.html">
+      <img src="assets/images/portfolio/pic14.jpg" alt="Pic14" />
+       <div class="portfolio-caption">
+      <h2>Project Title</h2>
+      <p>Short description</p>
+    </div>
+    </a>
+  </article>
 
-  </div> <!-- End .layout -->
+    <article class="portfolio-item">
+    <a href="projects/prj_001.html">
+      <img src="assets/images/portfolio/pic15.jpg" alt="Pic15" />
+       <div class="portfolio-caption">
+      <h2>Project Title</h2>
+      <p>Short description</p>
+    </div>
+    </a>
+  </article>
+
+    <article class="portfolio-item">
+    <a href="projects/prj_001.html">
+      <img src="assets/images/portfolio/pic16.jpg" alt="Pic16" />
+       <div class="portfolio-caption">
+      <h2>Project Title</h2>
+      <p>Short description</p>
+    </div>
+    </a>
+  </article>
+  <!-- ... -->
+  </div>
+</main>
+  <section class="contact-section">
+    <form class="contact-form">
+      <input type="text" placeholder="Name" required>
+      <input type="email" placeholder="Email" required>
+      <textarea placeholder="Your message..."></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+<!-- javascript scroll sideways funktion, mouse scrolling effects  -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const track = document.querySelector('.scroll-track');
+  const floatingNav = document.querySelector('.floating-nav');
+  let scrollProgress = 0;
+  let lastTouchY = null;
+
+  // Clamp helper
+  function clamp(val, min, max) {
+    return Math.max(min, Math.min(max, val));
+  }
+
+  function updateScroll() {
+    const maxScroll = track.scrollWidth - window.innerWidth;
+    scrollProgress = clamp(scrollProgress, 0, maxScroll);
+    track.style.transform = `translateX(${-scrollProgress}px)`;
+    
+    // Scroll progress ratio for nav animation (0 to 1)
+    const progressRatio = scrollProgress / maxScroll;
+    updateFloatingNav(progressRatio);
+  }
+
+  function updateFloatingNav(progressRatio) {
+    const maxDrift = 200; // max pixels to float downward
+    const yOffset = progressRatio * maxDrift;
+    floatingNav.style.transform = `translateY(${yOffset}px)`;
+  }
+
+  // Mouse wheel
+  window.addEventListener('wheel', e => {
+    e.preventDefault();
+    scrollProgress += e.deltaY * 0.5;
+    updateScroll();
+  }, { passive: false });
+
+  // Touch scroll
+  window.addEventListener('touchstart', e => {
+    if (e.touches.length === 1) {
+      lastTouchY = e.touches[0].clientY;
+    }
+  });
+
+  window.addEventListener('touchmove', e => {
+    if (e.touches.length === 1 && lastTouchY !== null) {
+      const deltaY = lastTouchY - e.touches[0].clientY;
+      scrollProgress += deltaY * 1.2;
+      updateScroll();
+      lastTouchY = e.touches[0].clientY;
+    }
+  }, { passive: false });
+
+  // Prevent native scroll
+  window.addEventListener('scroll', () => window.scrollTo(0, 0));
+});
+</script>
 </body>
+</html>
