@@ -134,13 +134,13 @@ height: calc(50vh - 2rem);
 /* === Desktop Split: 66/33 viewport height === */
 @media (min-width: 768px) {
   .scroll-sim {
-    height: 66vh;
+    height: calc(66dvh - 2);
   }
   .contact-section {
-    height: 33vh; /* Not 33vh to account for rounding */
+    height: 34dvh; /* Not 33vh to account for rounding */
   }
 
   .portfolio-item {
-    height: calc(66vh); /* update tile height to fill new scroll area */
+    height: calc(66dvh - 2); /* update tile height to fill new scroll area */
   }
 }
