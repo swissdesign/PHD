@@ -26,90 +26,150 @@
   <article class="portfolio-item">
     <a href="projects/project-name.html">
       <img src="assets/images/portfolio/pic02.jpg" alt="Pic02" />
+       <div class="portfolio-caption">
+      <h2>Project Title</h2>
+      <p>Short description</p>
+    </div>
     </a>
   </article>
 
   <article class="portfolio-item">
     <a href="projects/prj_001.html">
       <img src="assets/images/portfolio/pic01.jpg" alt="Pic01" />
+       <div class="portfolio-caption">
+      <h2>Project Title</h2>
+      <p>Short description</p>
+    </div>
     </a>
   </article>
 
    <article class="portfolio-item">
     <a href="projects/prj_001.html">
       <img src="assets/images/portfolio/pic03.jpg" alt="Pic03" />
+       <div class="portfolio-caption">
+      <h2>Project Title</h2>
+      <p>Short description</p>
+    </div>
     </a>
   </article>
 
      <article class="portfolio-item">
     <a href="projects/prj_001.html">
       <img src="assets/images/portfolio/pic04.jpg" alt="Pic04" />
+       <div class="portfolio-caption">
+      <h2>Project Title</h2>
+      <p>Short description</p>
+    </div>
     </a>
   </article>
 
     <article class="portfolio-item">
     <a href="projects/prj_001.html">
       <img src="assets/images/portfolio/pic05.jpg" alt="Pic05" />
+       <div class="portfolio-caption">
+      <h2>Project Title</h2>
+      <p>Short description</p>
+    </div>
     </a>
   </article>
 
     <article class="portfolio-item">
     <a href="projects/prj_001.html">
       <img src="assets/images/portfolio/pic07.jpg" alt="Pic07" />
+       <div class="portfolio-caption">
+      <h2>Project Title</h2>
+      <p>Short description</p>
+    </div>
     </a>
   </article>
 
     <article class="portfolio-item">
     <a href="projects/prj_001.html">
       <img src="assets/images/portfolio/pic08.jpg" alt="Pic08" />
+       <div class="portfolio-caption">
+      <h2>Project Title</h2>
+      <p>Short description</p>
+    </div>
     </a>
   </article>
 
     <article class="portfolio-item">
     <a href="projects/prj_001.html">
       <img src="assets/images/portfolio/pic09.jpg" alt="Pic09" />
+       <div class="portfolio-caption">
+      <h2>Project Title</h2>
+      <p>Short description</p>
+    </div>
     </a>
   </article>
 
     <article class="portfolio-item">
     <a href="projects/prj_001.html">
       <img src="assets/images/portfolio/pic10.jpg" alt="Pic10" />
+       <div class="portfolio-caption">
+      <h2>Project Title</h2>
+      <p>Short description</p>
+    </div>
     </a>
   </article>
 
     <article class="portfolio-item">
     <a href="projects/prj_001.html">
       <img src="assets/images/portfolio/pic11.jpg" alt="Pic11" />
+       <div class="portfolio-caption">
+      <h2>Project Title</h2>
+      <p>Short description</p>
+    </div>
     </a>
   </article>
 
     <article class="portfolio-item">
     <a href="projects/prj_001.html">
       <img src="assets/images/portfolio/pic12.jpg" alt="Pic12" />
+       <div class="portfolio-caption">
+      <h2>Project Title</h2>
+      <p>Short description</p>
+    </div>
     </a>
   </article>
 
     <article class="portfolio-item">
     <a href="projects/prj_001.html">
       <img src="assets/images/portfolio/pic13.jpg" alt="Pic13" />
+       <div class="portfolio-caption">
+      <h2>Project Title</h2>
+      <p>Short description</p>
+    </div>
     </a>
   </article>
 
     <article class="portfolio-item">
     <a href="projects/prj_001.html">
       <img src="assets/images/portfolio/pic14.jpg" alt="Pic14" />
+       <div class="portfolio-caption">
+      <h2>Project Title</h2>
+      <p>Short description</p>
+    </div>
     </a>
   </article>
 
     <article class="portfolio-item">
     <a href="projects/prj_001.html">
       <img src="assets/images/portfolio/pic15.jpg" alt="Pic15" />
+       <div class="portfolio-caption">
+      <h2>Project Title</h2>
+      <p>Short description</p>
+    </div>
     </a>
   </article>
 
     <article class="portfolio-item">
     <a href="projects/prj_001.html">
       <img src="assets/images/portfolio/pic16.jpg" alt="Pic16" />
+       <div class="portfolio-caption">
+      <h2>Project Title</h2>
+      <p>Short description</p>
+    </div>
     </a>
   </article>
   <!-- ... -->
@@ -119,15 +179,14 @@
   <p>&copy; 2025 P. Heiniger Design</p>
 </footer>
 <script>
+document.addEventListener('DOMContentLoaded', function () {
   const container = document.querySelector('main');
 
-  // Mouse wheel horizontal scroll
   window.addEventListener('wheel', function(e) {
     e.preventDefault();
     container.scrollLeft += e.deltaY;
   }, { passive: false });
 
-  // Touch swipe horizontal scroll
   let startX;
   let scrollLeft;
 
@@ -141,6 +200,7 @@
     const walk = (startX - x);
     container.scrollLeft = scrollLeft + walk;
   });
+});
 </script>
 </body>
 </html>

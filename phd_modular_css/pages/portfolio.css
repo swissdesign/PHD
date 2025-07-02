@@ -20,6 +20,8 @@ main {
   -webkit-overflow-scrolling: touch;
   gap: 2rem;
   padding: 2rem;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 /* === Portfolio Items === */
