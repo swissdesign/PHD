@@ -134,7 +134,7 @@ height: calc(50vh - 2rem);
 /* === Desktop Split: 66/33 viewport height === */
 @media (min-width: 768px) {
   .scroll-sim {
-    height: calc(66dvh - 2);
+    height: calc(66dvh);
   }
   .contact-section {
     height: 34dvh; /* Not 33vh to account for rounding */
