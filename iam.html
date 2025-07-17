@@ -217,7 +217,7 @@
 <body>
   <div class="phone-frame">
     <div class="status-bar">
-  <div class="status-left">P. Heiniger</div>
+  <div class="status-left" id="clock">00:00</div>
   <div class="status-right">
     <div class="reception">
       <span></span><span></span><span></span><span></span>
@@ -425,5 +425,21 @@
     </div>
   </div>
 </div>   
+<script>
+  function updateClock() {
+    const clock = document.getElementById("clock");
+    const now = new Date();
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    if (minutes < 10) minutes = "0" + minutes;
+    clock.textContent = hours + ":" + minutes;
+  }
+
+  // Update on load
+  updateClock();
+
+  // Update every 30 seconds
+  setInterval(updateClock, 30000);
+</script>
 </body>
 </html>
