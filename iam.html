@@ -10,7 +10,9 @@
       margin: 0;
       padding: env(safe-area-inset-top, 20px) env(safe-area-inset-right, 10px) env(safe-area-inset-bottom, 20px) env(safe-area-inset-left, 10px);
       height: 100dvh;
-      background: #000;
+      background: linear-gradient(45deg, #8bd3f7, #1c1c1c);
+      background-size: 200% 200%;
+      animation: bgShift 15s ease infinite;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       display: flex;
       align-items: center;
@@ -18,6 +20,12 @@
       color: #fff;
       overflow: hidden;
     }
+
+    @keyframes bgShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
     .phone-frame {
       width: 100%;
