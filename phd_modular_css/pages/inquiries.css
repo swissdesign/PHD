@@ -79,6 +79,11 @@ body::-webkit-scrollbar {
   color: #ddd;
 }
 
+/* === Hide hashtags on mobile (default) === */
+.portfolio-caption .hashtags {
+  display: none;
+}
+
 /* === Footer === */
 footer {
   position: fixed;
@@ -142,11 +147,12 @@ footer {
     height: calc(66dvh - 2rem);
   }
 
+  /* === Show hashtags again on desktop === */
   .portfolio-caption .hashtags {
-    display: none;
+    display: block;
   }
 
   .portfolio-caption {
     padding-bottom: 1em; /* Adjust if needed */
   }
-
+}
