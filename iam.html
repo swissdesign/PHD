@@ -4,141 +4,132 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PHD Frame</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      background: black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
+ <style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: sans-serif;
+  }
 
+  /* Ambient animated background ONLY inside phone-frame */
+  .phone-frame {
+    width: 100%;
+    max-width: 390px;
+    height: 100%;
+    max-height: 844px;
+    border-radius: 40px;
+    background: rgba(255, 255, 255, 0.02);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+  }
+
+  .phone-frame::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #8ab4f8, #1e1e1e);
+    background-size: 200% 200%;
+    animation: ambientFade 10s ease-in-out infinite alternate;
+    filter: blur(20px);
+    opacity: 0.7;
+    z-index: -1;
+  }
+
+  @keyframes ambientFade {
+    0%   { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+
+  .icon-link {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    transition: transform 0.2s ease, background 0.3s ease;
+    z-index: 1;
+  }
+
+  .icon-link::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(255,255,255,0.1), transparent 70%);
+    border-radius: 18px;
+    transform: scale(1.4);
+    filter: blur(10px);
+    z-index: -1;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+
+  .icon-link:hover {
+    transform: scale(1.1);
+    background: rgba(255,255,255,0.12);
+  }
+
+  .icon-link:hover::before {
+    opacity: 1;
+  }
+
+  .icon-svg {
+    width: 100%;
+    height: 100%;
+    fill: #d8d5cb;
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.2));
+  }
+
+  .icon-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    padding-top: 10px;
+    justify-items: center;
+  }
+
+  .bottom-icons {
+    display: flex;
+    justify-content: space-around;
+    padding: 16px 0;
+  }
+
+  .bottom-icons .icon {
+    width: 62px;
+    height: 62px;
+    font-size: 26px;
+  }
+
+  @media (min-width: 768px) {
     body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: linear-gradient(45deg, #a3d5ff, #1c1c1e);
-      animation: gradientShift 12s ease-in-out infinite alternate;
-      filter: blur(40px);
-      transform: scale(1.2);
-      z-index: -2;
-    }
-
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 100% 50%; }
-    }
-
-    .phone-frame {
-      width: 100%;
-      max-width: 390px;
-      height: 100%;
-      max-height: 844px;
-      border-radius: 40px;
-      background: rgba(255,255,255,0.02);
-      box-shadow: 0 0 50px rgba(0,0,0,0.8);
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      box-sizing: border-box;
-      backdrop-filter: blur(20px);
-      overflow: hidden;
-      position: relative;
-    }
-
-    .phone-frame::before {
-      content: "";
+      content: "Mobile view only. Resize your screen to simulate the phone UI.";
       position: absolute;
-      inset: 0;
-      background: linear-gradient(45deg, #66aaff, #333333, #66aaff);
-      background-size: 200% 200%;
-      animation: gradientShift 8s ease-in-out infinite;
-      filter: blur(50px);
-      opacity: 0.3;
-      z-index: -1;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 10px;
+      background: yellow;
+      color: black;
+      font-size: 14px;
+      text-align: center;
+      z-index: 10;
     }
-
-    .icon-link {
-      position: relative;
-      display: inline-block;
-      width: 60px;
-      height: 60px;
-      padding: 8px;
-      background: rgba(255,255,255,0.08);
-      border-radius: 18px;
-      transition: transform 0.2s ease, background 0.3s ease;
-      z-index: 1;
-    }
-
-    .icon-link::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle, rgba(255,255,255,0.1), transparent 70%);
-      border-radius: 18px;
-      transform: scale(1.4);
-      filter: blur(10px);
-      z-index: -1;
-      opacity: 0.8;
-      transition: opacity 0.3s ease;
-    }
-
-    .icon-link:hover {
-      transform: scale(1.1);
-      background: rgba(255,255,255,0.12);
-    }
-
-    .icon-link:hover::before {
-      opacity: 1;
-    }
-
-    .icon-svg {
-      width: 100%;
-      height: 100%;
-      fill: #d8d5cb;
-      filter: drop-shadow(0 0 1px rgba(0,0,0,0.2));
-    }
-
-    .icon-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      padding-top: 10px;
-      justify-items: center;
-    }
-
-    .bottom-icons {
-      display: flex;
-      justify-content: space-around;
-      padding: 16px 0;
-    }
-
-    .bottom-icons .icon {
-      width: 62px;
-      height: 62px;
-      font-size: 26px;
-    }
-
-    @media (min-width: 768px) {
-      body::before {
-        content: "Mobile view only. Resize your screen to simulate the phone UI.";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        padding: 10px;
-        background: yellow;
-        color: black;
-        font-size: 14px;
-        text-align: center;
-        z-index: 10;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
   <div class="phone-frame">
