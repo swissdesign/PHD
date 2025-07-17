@@ -5,111 +5,76 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#000000">
   <title>Pascal Heiniger | Contact</title>
-  <meta name="description" content="Pascal Heiniger – A mobile-native digital contact card built like an app. Creative, coded, interactive.">
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="Pascal Heiniger">
-  <meta name="ai-summary" content="IAM Pascal Heiniger. Alpine creative. Contact me through this mobile-only immersive experience. Tap, shake, speak, connect.">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Pascal Heiniger – Interactive Contact Card">
-  <meta property="og:description" content="An immersive, mobile-native contact experience. Shake, swipe, tap. Built by hand in the Alps.">
-  <meta property="og:image" content="https://www.pascalheiniger.ch/assets/iam-preview.jpg">
-  <meta property="og:url" content="https://www.pascalheiniger.ch/iam">
-  <meta property="og:type" content="website">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Pascal Heiniger – Mobile IAM Card">
-  <meta name="twitter:description" content="Creative. Alpine. Code. Contact me through this mobile-first experience.">
-  <meta name="twitter:image" content="https://www.pascalheiniger.ch/assets/iam-preview.jpg">
-
-  <!-- Schema JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Pascal Heiniger",
-    "url": "https://www.pascalheiniger.ch/iam",
-    "jobTitle": "Creative Director",
-    "worksFor": {"@type": "Organization", "name": "P. Heiniger Design"},
-    "sameAs": [
-      "https://instagram.com/heiniger.p",
-      "https://linkedin.com/in/pascalheiniger",
-      "mailto:pascal.heiniger@gmail.com",
-      "tel:+4179XXXXXXX"
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Andermatt",
-      "addressCountry": "CH"
-    },
-    "knowsAbout": ["Brand Strategy", "UX Design", "Creative Development", "Nature Reforestation", "Mobile Experiences"]
-  }
-  </script>
-
   <style>
-   html, body {
-  margin: 0;
-  padding: env(safe-area-inset-top, 20px) env(safe-area-inset-right, 12px) env(safe-area-inset-bottom, 20px) env(safe-area-inset-left, 12px);
-  height: 100dvh;
-  background: #000;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  overflow: hidden;
-}
-.phone-frame {
-  width: 100%;
-  max-width: 390px;
-  height: 100%;
-  max-height: 844px;
-  background: url('your-background-image.jpg') center/cover no-repeat;
-  border-radius: 40px;
-  box-shadow: 0 0 30px rgba(255,255,255,0.1);
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-sizing: border-box;
-}
+    html, body {
+      margin: 0;
+      padding: env(safe-area-inset-top, 20px) env(safe-area-inset-right, 10px) env(safe-area-inset-bottom, 20px) env(safe-area-inset-left, 10px);
+      height: 100dvh;
+      background: #000;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .phone-frame {
+      width: 100%;
+      max-width: 390px;
+      height: 100%;
+      max-height: 844px;
+      background: url('your-background-image.jpg') center/cover no-repeat;
+      border-radius: 40px;
+      box-shadow: 0 0 30px rgba(255,255,255,0.1);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-sizing: border-box;
+    }
+
     .icons-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: repeat(6, auto);
-      grid-gap: 16px;
+      grid-gap: 20px;
       flex-grow: 1;
       padding-top: 40px;
     }
+
     .icon {
-      width: 60px;
-      height: 60px;
+      width: 65px;
+      height: 65px;
       border-radius: 18px;
       background: rgba(255,255,255,0.1);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 28px;
+      font-size: 30px;
       color: white;
       backdrop-filter: blur(5px);
       cursor: pointer;
       transition: all 0.2s;
     }
+
     .icon:hover {
       transform: scale(1.08);
       background: rgba(255,255,255,0.25);
     }
+
     .bottom-icons {
       display: flex;
       justify-content: space-around;
       padding: 16px 0;
     }
+
     .bottom-icons .icon {
       width: 65px;
       height: 65px;
       font-size: 30px;
     }
+
     @media (min-width: 768px) {
       body::before {
         content: "Mobile view only. Resize your screen to simulate the phone UI.";
@@ -127,41 +92,14 @@
     }
   </style>
   <script>
-    // Tilt rotation
     window.addEventListener('deviceorientation', function(event) {
       const gamma = event.gamma;
       const beta = event.beta;
       const phone = document.querySelector('.phone-frame');
       if (phone) {
-        phone.style.transform = `translate(-50%, -50%) rotateX(${beta/20}deg) rotateY(${gamma/20}deg)`;
+        phone.style.transform = `rotateX(${beta/20}deg) rotateY(${gamma/20}deg)`;
       }
     });
-
-    // Shake-to-go-back to index.html
-    let lastX, lastY, lastZ, moveCounter = 0;
-    window.addEventListener('devicemotion', function(event) {
-      const acc = event.accelerationIncludingGravity;
-      if (!acc) return;
-      const x = acc.x;
-      const y = acc.y;
-      const z = acc.z;
-      if (typeof lastX !== 'undefined') {
-        const delta = Math.abs(x - lastX) + Math.abs(y - lastY) + Math.abs(z - lastZ);
-        if (delta > 25) {
-          moveCounter++;
-        } else {
-          moveCounter = Math.max(0, moveCounter - 1);
-        }
-        if (moveCounter > 3) {
-          moveCounter = 0;
-          if ("vibrate" in navigator) navigator.vibrate(100);
-          window.location.href = "/";
-        }
-      }
-      lastX = x;
-      lastY = y;
-      lastZ = z;
-    }, true);
   </script>
 </head>
 <body>
