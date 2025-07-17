@@ -141,7 +141,7 @@ footer {
   .portfolio-item {
     height: calc(66dvh - 2rem);
   }
-{
+
   .portfolio-caption .hashtags {
     display: none;
   }
@@ -149,4 +149,4 @@ footer {
   .portfolio-caption {
     padding-bottom: 1em; /* Adjust if needed */
   }
-}
+
