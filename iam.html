@@ -27,6 +27,21 @@
   100% { background-position: 0% 50%; }
 }
 
+.ambient-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(45deg, #a3d5ff, #1c1c1e);
+  animation: gradientShift 12s ease-in-out infinite alternate;
+  filter: blur(40px);
+  transform: scale(1.1);
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
     .phone-frame {
       width: 100%;
       max-width: 390px;
@@ -84,6 +99,7 @@
 
 
 .icon-link {
+  position: relative; /* Needed so the ::before is positioned correctly */
   display: inline-block;
   width: 60px;
   height: 60px;
@@ -91,11 +107,29 @@
   background: rgba(255,255,255,0.08);
   border-radius: 18px;
   transition: transform 0.2s ease, background 0.3s ease;
+  z-index: 1; /* Ensure it's above the pseudo element */
+}
+
+.icon-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.1), transparent 70%);
+  border-radius: 18px; /* Match icon-link's border-radius */
+  transform: scale(1.4); /* Slightly bigger than the icon */
+  filter: blur(10px);
+  z-index: -1; /* Place behind the icon */
+  transition: opacity 0.3s ease;
 }
 
 .icon-link:hover {
   transform: scale(1.1);
   background: rgba(255,255,255,0.12);
+}
+
+.icon-link:hover::before {
+  opacity: 1;
+}
 }
 
 .icon-svg {
@@ -106,6 +140,19 @@
 .invisible {
   opacity: 0;
   pointer-events: none;
+}
+
+#phd-logo {
+  position: fixed;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%) scale(1);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  filter: drop-shadow(0 0 10px hotpink) blur(1px);
+  width: 120px;
+  height: auto;
 }
 
     @media (min-width: 768px) {
@@ -136,7 +183,8 @@
   </script>
 </head>
 <body>
-  <div class="phone-frame">
+  <div class="phone-frame"><div class="ambient-bg"></div>
+  <svg id="phd-logo" src="assets/images/phd-logo.svg"></svg>
  <div class="icon-row">
   <a class="icon-link" href="https://wa.me/4179XXXXXXX?text=Hi+Pascal!" title="WhatsApp" aria-label="WhatsApp">
     <!-- whatsapp.svg -->
@@ -330,5 +378,18 @@
       
     </div>
       </div>
+      <script>
+  window.addEventListener('scroll', () => {
+    const logo = document.getElementById('phd-logo');
+    const scrollY = window.scrollY || window.pageYOffset;
+    if (scrollY > 50) {
+      logo.style.opacity = '1';
+      logo.style.transform = 'translate(-50%, 50%) scale(1.2)';
+    } else {
+      logo.style.opacity = '0';
+      logo.style.transform = 'translate(-50%, 50%) scale(1)';
+    }
+  });
+</script>
 </body>
 </html>
