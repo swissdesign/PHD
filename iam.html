@@ -114,6 +114,83 @@
     font-size: 26px;
   }
 
+  .status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: white;
+  padding: 4px 8px;
+  height: 24px;
+  margin-bottom: 8px;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+.status-left {
+  font-size: 13px;
+}
+
+.status-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Reception bars */
+.reception span {
+  display: inline-block;
+  width: 2px;
+  background: white;
+  margin-right: 1px;
+  border-radius: 1px;
+}
+
+.reception span:nth-child(1) { height: 4px; opacity: 0.4; }
+.reception span:nth-child(2) { height: 6px; opacity: 0.6; }
+.reception span:nth-child(3) { height: 8px; opacity: 0.8; }
+.reception span:nth-child(4) { height: 10px; opacity: 1; }
+
+/* Battery icon */
+.battery {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 24px;
+  height: 12px;
+}
+
+.battery-body {
+  width: 20px;
+  height: 12px;
+  border: 1.5px solid white;
+  border-radius: 2px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.battery-level {
+  background: linear-gradient(to right, #d8d5cb, #ffffff);
+  width: 60%;
+  height: 100%;
+  animation: batteryPulse 3s infinite ease-in-out alternate;
+}
+
+.battery-tip {
+  width: 2px;
+  height: 6px;
+  background: white;
+  margin-left: 1px;
+  border-radius: 1px;
+}
+
+/* Animation for battery level */
+@keyframes batteryPulse {
+  0%   { width: 40%; }
+  50%  { width: 70%; }
+  100% { width: 60%; }
+}
+
 @media (min-width: 768px) {
   body::before {
     content: "📱 Mobile-first, they said. 90% on mobile, they said... Then you show up like a desktop noob 🙄";
@@ -139,6 +216,21 @@
 </head>
 <body>
   <div class="phone-frame">
+    <div class="status-bar">
+  <div class="status-left">P. Heiniger</div>
+  <div class="status-right">
+    <div class="reception">
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <div class="signal">5G</div>
+    <div class="battery">
+      <div class="battery-body">
+        <div class="battery-level"></div>
+      </div>
+      <div class="battery-tip"></div>
+    </div>
+  </div>
+</div>
     <div class="icon-row">
   <a class="icon-link" href="https://wa.me/41764995230?text=Hi+Pascal!" title="WhatsApp" aria-label="WhatsApp">
     <!-- whatsapp.svg -->
