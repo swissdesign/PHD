@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.pascalheiniger.ch/sitemap.xml
