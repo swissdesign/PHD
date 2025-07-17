@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+  <title>Pascal Heiniger | Contact</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #000;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      overflow: hidden;
+      color: #fff;
+    }
+
+    .phone-frame {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 390px;
+      height: 844px;
+      transform: translate(-50%, -50%);
+      background: url('your-background-image.jpg') center/cover no-repeat;
+      border-radius: 40px;
+      box-shadow: 0 0 30px rgba(255,255,255,0.1);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease;
+    }
+
+    .icons-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(6, auto);
+      grid-gap: 16px;
+      flex-grow: 1;
+      padding-top: 40px;
+    }
+
+    .icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      color: white;
+      backdrop-filter: blur(5px);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .icon:hover {
+      transform: scale(1.08);
+      background: rgba(255,255,255,0.25);
+    }
+
+    .bottom-icons {
+      display: flex;
+      justify-content: space-around;
+      padding: 16px 0;
+    }
+
+    .bottom-icons .icon {
+      width: 65px;
+      height: 65px;
+      font-size: 30px;
+    }
+
+    @media (min-width: 768px) {
+      body::before {
+        content: "Mobile view only. Resize your screen to simulate the phone UI.";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 10px;
+        background: yellow;
+        color: black;
+        font-size: 14px;
+        text-align: center;
+        z-index: 10;
+      }
+    }
+  </style>
+  <script>
+    window.addEventListener('deviceorientation', function(event) {
+      const gamma = event.gamma;
+      const beta = event.beta;
+      const phone = document.querySelector('.phone-frame');
+      if (phone) {
+        phone.style.transform = `translate(-50%, -50%) rotateX(${beta/20}deg) rotateY(${gamma/20}deg)`;
+      }
+    });
+  </script>
+</head>
+<body>
+  <div class="phone-frame">
+    <div class="icons-grid">
+      <a class="icon" href="tel:+4179XXXXXXX" title="Call">📞</a>
+      <a class="icon" href="mailto:pascal.heiniger@gmail.com" title="Email">✉️</a>
+      <a class="icon" href="https://wa.me/4179XXXXXXX?text=Hi+Pascal!" target="_blank" title="WhatsApp">💬</a>
+      <a class="icon" href="https://instagram.com/heiniger.p" target="_blank" title="Instagram">📸</a>
+      <a class="icon" href="https://facebook.com" target="_blank" title="Facebook">📘</a>
+      <a class="icon" href="/assets/pascalheiniger.vcf" download title="Save Contact">💾</a>
+      <a class="icon" href="https://linkedin.com/in/pascalheiniger" target="_blank" title="LinkedIn">💼</a>
+      <a class="icon" href="#" title="Apple Wallet">🍎</a>
+      <!-- Add more icons here to fill 6 rows -->
+      <a class="icon" href="#" title="Portfolio">🖼️</a>
+      <a class="icon" href="#" title="YouTube">📺</a>
+      <a class="icon" href="#" title="Telegram">📲</a>
+      <a class="icon" href="#" title="Threads">🧵</a>
+      <a class="icon" href="#" title="Snapchat">👻</a>
+      <a class="icon" href="#" title="Twitter">🐦</a>
+      <a class="icon" href="#" title="TikTok">🎵</a>
+      <a class="icon" href="#" title="Website">🌐</a>
+      <!-- Add or adjust as needed -->
+    </div>
+    <div class="bottom-icons">
+      <a class="icon" href="https://wa.me/4179XXXXXXX?text=Hi+Pascal!" title="WhatsApp">💬</a>
+      <a class="icon" href="tel:+4179XXXXXXX" title="Call">📞</a>
+      <a class="icon" href="mailto:pascal.heiniger@gmail.com" title="Email">✉️</a>
+      <a class="icon" href="https://instagram.com/heiniger.p" target="_blank" title="Instagram">📸</a>
+    </div>
+  </div>
+</body>
+</html>
