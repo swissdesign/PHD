@@ -114,21 +114,27 @@
     font-size: 26px;
   }
 
-  @media (min-width: 768px) {
-    body::before {
-      content: "Mobile-first, they said. 90% on mobile, they said… Then you show up like a desktop noob";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      padding: 10px;
-      background: rgb(255, 0, 149);
-      color: rgb(254, 254, 254);
-      font-size: 16px;
-      text-align: center;
-      z-index: 10;
-    }
+@media (min-width: 768px) {
+  body::before {
+    content: "📱 Mobile-first, they said. 90% on mobile, they said... Then you show up like a desktop noob 🙄";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 12px 16px;
+    background: #ffeb3b;
+    color: #000;
+    font-weight: 800;
+    font-size: 15px;
+    text-align: center;
+    z-index: 10;
+    animation: wiggle 1.2s ease-in-out infinite alternate;
   }
+}
+@keyframes wiggle {
+  0% { transform: rotateZ(-0.3deg); }
+  100% { transform: rotateZ(0.3deg); }
+}
 </style>
 </head>
 <body>
