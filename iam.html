@@ -75,6 +75,35 @@
       font-size: 30px;
     }
 
+    .icon-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 18px;
+  padding-top: 12px;
+}
+
+.icon-link {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  padding: 10px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 20px;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.icon-link:hover {
+  transform: scale(1.1);
+  background: rgba(255,255,255,0.12);
+}
+
+.icon-svg {
+  width: 100%;
+  height: 100%;
+  fill: white;
+}
+
     @media (min-width: 768px) {
       body::before {
         content: "Mobile view only. Resize your screen to simulate the phone UI.";
@@ -110,7 +139,7 @@
     <!-- whatsapp.svg -->
     <svg class="icon-svg" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
       <title>WhatsApp</title>
-      <path d="...SVG PATH FROM FILE..."/>
+      <path d="assets/images/iam/whatsapp.svg"/>
     </svg>
   </a>
 
@@ -118,7 +147,7 @@
     <!-- gmail.svg -->
     <svg class="icon-svg" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
       <title>Gmail</title>
-      <path d="...SVG PATH FROM FILE..."/>
+      <path d="gmail"/>
     </svg>
   </a>
 
@@ -126,7 +155,7 @@
     <!-- instagram.svg -->
     <svg class="icon-svg" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
       <title>Instagram</title>
-      <path d="...SVG PATH FROM FILE..."/>
+      <path d="assets/images/iam/instagram.svg"/>
     </svg>
   </a>
 
@@ -134,7 +163,7 @@
     <!-- facebook.svg -->
     <svg class="icon-svg" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
       <title>Facebook</title>
-      <path d="...SVG PATH FROM FILE..."/>
+      <path d="assets/images/iam/facebook.svg"/>
     </svg>
   </a>
 
@@ -142,7 +171,7 @@
     <!-- youtube.svg -->
     <svg class="icon-svg" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
       <title>YouTube</title>
-      <path d="...SVG PATH FROM FILE..."/>
+      <path d="assets/images/iam/youtube.svg"/>
     </svg>
   </a>
 
@@ -150,7 +179,7 @@
     <!-- applewallet.svg -->
     <svg class="icon-svg" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
       <title>Wallet</title>
-      <path d="...SVG PATH FROM FILE..."/>
+      <path d="assets/images/iam/applewallet.svg"/>
     </svg>
   </a>
 
@@ -158,7 +187,7 @@
     <!-- github.svg -->
     <svg class="icon-svg" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
       <title>GitHub</title>
-      <path d="...SVG PATH FROM FILE..."/>
+      <path d="assets/images/iam/github.svg"/>
     </svg>
   </a>
 
@@ -166,19 +195,44 @@
     <!-- contacts.svg -->
     <svg class="icon-svg" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
       <title>Vcard</title>
-      <path d="...SVG PATH FROM FILE..."/>
+      <path d="assets/images/iam/contacts.svg"/>
     </svg>
   </a>
 </div>
     </div>
     <div class="bottom-icons">
      <a class="icon-link" href="/vcf/yourcontact.vcf" title="Add to Contacts" aria-label="vCard">
-    <!-- contacts.svg -->
+    <!-- phone.svg -->
     <svg class="icon-svg" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
       <title>Vcard</title>
-      <path d="...SVG PATH FROM FILE..."/>
+      <path d="assets/images/iam/phone.svg"/>
     </svg>
   </a>
+         <a class="icon-link" href="/vcf/yourcontact.vcf" title="Add to Contacts" aria-label="vCard">
+    <!-- gmail.svg -->
+    <svg class="icon-svg" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
+      <title>E-mail</title>
+      <path d="assets/images/iam/gmail.svg"/>
+    </svg>
+  </a>
+
+       <a class="icon-link" href="/vcf/yourcontact.vcf" title="Add to Contacts" aria-label="vCard">
+    <!-- phd.svg -->
+    <svg class="icon-svg" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
+      <title>P. Heiniger Design</title>
+      <path d="assets/images/iam/phd.svg"/>
+    </svg>
+  </a>
+
+      
+       <a class="icon-link" href="/vcf/yourcontact.vcf" title="Add to Contacts" aria-label="vCard">
+    <!-- phd.svg -->
+    <svg class="icon-svg" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
+      <title>P. Heiniger Design</title>
+      <path d="assets/images/iam/phd.svg"/>
+    </svg>
+  </a>
+      
     </div>
   </div>
 </body>
