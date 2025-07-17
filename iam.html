@@ -8,15 +8,22 @@
   <style>
 html, body {
   margin: 0;
-  padding: env(safe-area-inset-top, 20px) env(safe-area-inset-right, 10px) env(safe-area-inset-bottom, 20px) env(safe-area-inset-left, 10px);
-  height: 100dvh;
-  background: #000; /* Black frame */
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
+  padding: 0;
+  height: 100%;
+  background: radial-gradient(circle at 30% 30%, #99c2f0, #2e2e30); /* fallback */
   overflow: hidden;
+  background: none;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, #a8cde8, #2e2e2e);
+  animation: shiftGradient 12s ease-in-out infinite alternate;
+  z-index: -2;
+  filter: blur(30px);
+  transform: scale(1.2);
 }
 
     @keyframes bgShift {
