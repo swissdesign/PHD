@@ -82,10 +82,23 @@
   }
 
 .icon-container {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-  border-radius: 18px;
-  padding: 12px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding: 16px 12px 32px; /* Adjust this if it overflowed */
+  z-index: 1; /* ensures it's above the bg */
+}
+
+.fade-edges {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent 15%, transparent 85%, rgba(0,0,0,0.5));
 }
 
   .icon-link {
@@ -274,6 +287,7 @@
 </div>
     <div class="icon-row">
 
+      <div class="fade-edges">
       <div class="icon-container">
   <a class="icon-link" href="https://calendar.app.google/UE9spRMD8FiBcLPP7" title="Bookingcalander" aria-label="Bookingcalander">
     <!-- calander.svg -->
@@ -291,7 +305,9 @@
 </svg>
   </a>
   </div>
+  </div>
 
+  <div class="fade-edges">
   <div class="icon-container">
  <a class="icon-link" href="https://raw.githubusercontent.com/swissdesign/PHD/main/assets/images/iam/addPass_51eb2d2442_2025-07-18T01_47_58.442Z.pkpass" title="Apple Wallet" aria-label="Apple Wallet">
     <!-- applewallet.svg -->
@@ -351,7 +367,9 @@
 </svg>
   </a>
   </div>
+  </div>
 
+  <div class="fade-edges">
   <div class="icon-container">
     <a class="icon-link" href="https://maps.app.goo.gl/25KmYPJiDMGYUnFN8" title="Office Location" aria-label="Office Location">
     <!-- google Maps.svg -->
@@ -365,7 +383,9 @@
 </svg>
   </a>
   </div>
+  </div>
 
+  <div class="fade-edges">
   <div class="icon-container">
     <a class="icon-link" href="https://www.andermatt.swiss?utm_source=pascalheiniger.design&utm_medium=referral&utm_campaign=portfolio_link" title="Andermatt URserntal Toursimus" aria-label="Andermatt Urserntal Tourismus">
     <!-- instagram.svg -->
@@ -399,7 +419,9 @@
 </svg>
   </a>
   </div>
+  </div>
 
+  <div class="fade-edges">
   <div class="icon-container">
   <a class="icon-link" href="https://wa.me/message/MFLQGBP5MWY5M1" title="WhatsApp to Pascal" aria-label="WhatsApp to Pascal">
     <!-- whatsapp.svg -->
@@ -409,7 +431,9 @@
     </svg>
   </a>
   </div>
+  </div>
 
+  <div class="fade-edges">
 <div class="icon-container">
   <a class="icon-link" href="https://www.instagram.com/p_heiniger_design/?utm_source=pascalheiniger_design&utm_medium=wallet&utm_campaign=social_follow" title="Instagram" aria-label="Instagram">
     <!-- instagram.svg -->
@@ -419,7 +443,9 @@
     </svg>
   </a>
   </div>
+  </div>
 
+  <div class="fade-edges">
   <div class="icon-container">
   <a class="icon-link" href="https://facebook.com/pheinigerdesign?utm_source=facebook&utm_medium=social&utm_campaign=pascalheiniger_design_brand" title="Facebook" aria-label="Facebook">
     <!-- facebook.svg -->
@@ -429,7 +455,9 @@
     </svg>
   </a>
   </div>
+  </div>
 
+  <div class="fade-edges">
   <div class="icon-container">
   <a class="icon-link" href="https://www.youtube.com/@notjustgoodlooking?utm_source=pascalheiniger_design&utm_medium=referral&utm_campaign=branding" title="Not Just Good Looking" aria-label="Not Just Good Looking">
     <!-- youtube.svg -->
@@ -439,7 +467,9 @@
     </svg>
   </a>
   </div>
+  </div>
 
+  <div class="fade-edges">
   <div class="icon-container">
   <a class="icon-link" href="https://github.com/swissdesign" title="GitHub" aria-label="SwissDesign">
     <!-- github.svg -->
@@ -449,7 +479,9 @@
     </svg>
   </a>
   </div>
+  </div>
 
+  <div class="fade-edges">
   <div class="icon-container">
   <a class="icon-link" href="https://www.waldundklima.ch/?utm_source=pascalheiniger.ch&utm_medium=referral&utm_campaign=portfolio_link" title="Verein Wald & Klima" aria-label="waldundklima">
     <!-- waldundklima.svg -->
@@ -467,7 +499,9 @@
 </svg>
   </a>
   </div>
+  </div>
 
+  <div class="fade-edges">
   <div class="icon-container">
    <a class="icon-link" href="https://www.skischuleandermatt.ch/?utm_source=pascalheiniger.ch&utm_medium=referral&utm_campaign=partnerlink&utm_content=homepage" title="Skischool Andermatt" aria-label="ask for Pascal Heiniger">
     <!-- phd.svg -->
@@ -506,7 +540,9 @@
 </svg>
   </a>
   </div>
+  </div>
 
+  <div class="fade-edges">
   <div class="icon-container">
       <a class="icon-link" href="https://linktr.ee/DemoTeam?utm_source=pascalheiniger.ch&utm_medium=referral&utm_campaign=partnerlink&utm_content=homepage" title="Demo Team Andermatt" aria-label="synchronised skiing">
     <!-- phd.svg -->
@@ -551,7 +587,9 @@
 </svg>
   </a>
   </div>
+  </div>
 
+  <div class="fade-edges">
   <div class="icon-container">
       <a class="icon-link" href="https://www.meteosuisse.admin.ch/previsions-locales/andermatt/6490.html#forecast-tab=detail-view" title="Andermatt" aria-label="Weather Forcast">
     <!-- phd.svg -->
@@ -568,7 +606,9 @@
 </svg>
   </a>
   </div>
+  </div>
 
+  <div class="fade-edges">
   <div class="icon-container">
       <a class="icon-link" href="https://www.meteosuisse.admin.ch/previsions-locales/andermatt/6490.html#forecast-tab=detail-view" title="Andermatt" aria-label="Weather Forcast">
     <!-- phd.svg -->
@@ -584,11 +624,13 @@
   <path d="M3.77,2.82c1.01-.09,2.31-.07,3.31.11.63.12,1.43.23,1.48.97.03.58-.13,2.26-.26,2.86-.25,1.16-1.02,2.33-1.95,3.05-.24.19-1.11.71-1.36.73-.38.03-1.67-.94-1.96-1.25-1.48-1.54-1.7-3.9-1.51-5.94.14-.21,1.91-.51,2.25-.54ZM5.65,3.95h-1.39v1.63h-1.63v1.39h1.63v1.63h1.39v-1.63h1.63v-1.39h-1.63v-1.63Z" fill="#fe0505"/>
 </svg>
   </a>
+  </div>
   </div>
 
 </div>
     <div class="bottom-icons">
 
+      <div class="fade-edges">
       <div class="icon-container">
      <a class="icon-link" href="tel:+41764995230" title="callme" aria-label="phone">
     <!-- phone.svg -->
@@ -598,7 +640,9 @@
 </svg>
   </a>
   </div>
+  </div>
 
+  <div class="fade-edges">
   <div class="icon-container">
        <a class="icon-link" href="mailto:design@pascalheiniger.ch" title="E-mail" aria-label="Design@pascalheiniger.ch">
     <!-- gmail.svg -->
@@ -612,7 +656,9 @@
 </svg>
   </a>
   </div>
+  </div>
 
+  <div class="fade-edges">
   <div class="icon-container">
        <a class="icon-link" href="https://www.pascalheiniger.ch?utm_source=external&utm_medium=referral&utm_campaign=branding&utm_content=home-link" title="P.heinigerDesign" aria-label="P.heinigerDesign">
     <!-- phd.svg -->
@@ -622,7 +668,9 @@
     </svg>
   </a>
   </div>
+  </div>
 
+  <div class="fade-edges">
   <div class="icon-container">
    <a class="icon-link" href="https://www.pascalheiniger.ch/assets/images/iam/Pascal Heiniger.vcf" title="v Card" aria-label="Pascal Heiniger">
     <!-- phd.svg -->
@@ -637,6 +685,7 @@
   <path d="M10.32,7.84c3.73-.47,3.74,5.91-.1,5.31-2.64-.41-2.64-4.97.1-5.31Z" fill="#a9a29a"/>
 </svg>
   </a>
+  </div>
   </div>
       
     </div>
