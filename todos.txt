@@ -1,0 +1,136 @@
+🔝 Priority: High-Impact, Money-Focused, Mission-Aligned Projects
+
+These are projects i have strong passion for and that have direct potential to generate money, reputation, or scalable products.
+
+1. Demo Team Andermatt
+	•	Purpose: Promote the synchro team, find sponsors, recruit kids, share media
+	•	Target: Locals, families, ski school, Swiss Snowsports
+	•	Action: Form for signups (kids/volunteers) + sponsor interest
+
+2. Ocean Glow – Fermented Scalp Rituals
+	•	Purpose: Waterless, fermented scalp care with regional batch storytelling
+	•	Target: Natural beauty consumers, wellness influencers
+	•	Action: Waitlist form, quiz, link to seasonal ritual pages
+
+3. .whitepage – Web3 Whitepaper Directory
+	•	Purpose: Decentralized hub for crypto whitepapers with AI summaries
+	•	Target: Crypto OGs, Web3 founders, devs, DAOs
+	•	Action: Form to submit projects or request early access
+
+4. The Wolves – Elite Ski Instructor Certification
+	•	Purpose: Certification system inspired by Golden Keys for elite ski pros
+	•	Target: High-level instructors, ski schools, HNW guests
+	•	Action: Application form (instructors), curiosity form (clients)
+
+5. Trading Bot Starter Kit
+	•	Purpose: Modular Python-based trading bots with AI enhancement
+	•	Target: Retail crypto traders, indie devs, coders
+	•	Action: Form for early access to starter repo, updates
+
+6. ICS Creator Pro
+	•	Purpose: Mobile-first app for dynamic, always-updated calendars
+	•	Target: Parents, schools, event organizers
+	•	Action: Demo + form to request white-label or subscription
+
+
+⸻
+
+
+🎯 Medium Priority: Strategic, Niche, or Brand-Building Projects
+
+Good ideas that support your mission, brand, or long-term systems.
+
+7. The Business Maker (AI Company Builder OS)
+	•	Purpose: AI-run business OS with agent teams, reporting, marketplace
+	•	Target: Entrepreneurs, solopreneurs, visionaries
+	•	Action: Pre-alpha form for builders/investors/early users
+
+8. Andermatt Stock Footage Platform
+	•	Purpose: Curated stock image/video marketplace for the region
+	•	Target: Media buyers, hotels, photographers
+	•	Action: Form for contributors & buyers; display sample gallery
+
+9. Probiotic Lubricant Concept (OceanGlow Sister Brand)
+	•	Purpose: Natural fermented personal care (aloe, konjac, seaweed)
+	•	Target: Wellness couples, women’s health advocates
+	•	Action: Story page + form for testers, scientists, partners
+
+10. Ursern.ch (Local Portal & Culture Hub)
+	•	Purpose: Community platform for locals, events, and culture
+	•	Target: Residents, organizations, tourists
+	•	Action: Form for project suggestions, business listings
+
+11. Verein Wald und Klima Ursern
+	•	Purpose: Local reforestation & education initiative
+	•	Target: Donors, schools, corporate CO₂ buyers
+	•	Action: Donation form, CO₂ interest, volunteer signup
+
+
+⸻
+
+
+Experimental / Wildcard Ideas (Worth a Page)
+
+12. Viral Niche Detector Tool
+	•	Purpose: AI tool to analyze short-form video virality
+	•	Target: Creators, growth hackers
+	•	Action: Waitlist + example breakdown video
+
+13. dry rain – Affiliate Brand Concept
+	•	Purpose: A playful or atmospheric affiliate/product testing site
+	•	Target: Passive income, SEO testing
+	•	Action: Pre-launch interest form or blog signup
+
+14. Lugär – Shopify Product Store
+	•	Purpose: Sell curated goods, partner products, fermented kits
+	•	Target: Existing audience, experimental shoppers
+	•	Action: Collection interest form + email list for next drop
+
+15. .mountainguide – Guide Directory or Booking Tool
+	•	Purpose: Web3/modern booking tool for certified guides
+	•	Target: Mountain guides, tourists, certification bodies
+	•	Action: Form for guides to apply or users to request guides
+
+16. .swissmade, .swisssnowsports, .andermatt (Freename TLDs)
+	•	Purpose: Future namespace branding, NFT or community plays
+	•	Target: Domain investors, Swiss brands, web3 builders
+	•	Action: Explain the vision + form for collabs/interest
+
+
+⸻
+
+
+To-Do Setup (For Notes App or GitHub Projects)
+
+
+⸻
+
+
+📁 Landing Page Sprint – August 2025
+
+🔁 System Setup
+	•	Finalize AI tool / Gemini + GitHub Pages workflow
+	•	Create universal landing page template (HTML + form)
+	•	Link form to Google Sheet with tracking column for origin
+
+🚀 Launch Order (Top 6 First)
+	•	Demo Team Andermatt
+	•	Ocean Glow
+	•	.whitepage
+	•	The Wolves
+	•	Trading Bot Starter Kit
+	•	ICS Creator Pro
+
+🛠️ Then Mid-Tier
+	•	The Business Maker
+	•	Andermatt Stock Footage
+	•	Probiotic Lube
+	•	Ursern.ch
+	•	Wald und Klima
+
+🧪 Optional / Experimental
+	•	Viral Niche Detector
+	•	dry rain
+	•	Lugär
+	•	.mountainguide
+	•	.swissmade / .andermatt / .swisssnowsports
