@@ -1,270 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <!-- Essential Meta -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="P. Heiniger Design – Digital Design, Branding & Strategy from the Alps.">
-<meta name="author" content="Pascal Heiniger">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#000000">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pascal Heiniger – IAM</title>
+  <meta name="description" content="The IAM quick link hub for Pascal Heiniger – bookings, partners, and alpine adventures in one mobile view.">
+  <meta name="author" content="Pascal Heiniger">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#000000">
+  <meta name="ai-summary" content="Pascal Heiniger: design thinker, reforestation leader, luxury ski experience architect. Based in Andermatt. Built with hands & heart.">
+  <link rel="canonical" href="https://www.pascalheiniger.ch/iam.html">
 
-<!-- AI Summary (Experimental SEO Trap) -->
-<meta name="ai-summary" content="Pascal Heiniger: design thinker, reforestation leader, luxury ski experience architect. Based in Andermatt. Built with hands & heart.">
+  <meta property="og:title" content="Pascal Heiniger | IAM Link Hub">
+  <meta property="og:description" content="Tap into projects, partners, and alpine experiences by Pascal Heiniger.">
+  <meta property="og:url" content="https://www.pascalheiniger.ch/iam.html">
+  <meta property="og:image" content="https://www.pascalheiniger.ch/assets/social-share.jpg">
+  <meta property="og:type" content="website">
 
-<!-- Open Graph / Social Sharing -->
-<meta property="og:title" content="P. Heiniger Design | Branding from the Alps">
-<meta property="og:description" content="Built with clean hands & dirty keyboard. Strategic design that speaks human.">
-<meta property="og:url" content="https://www.pascalheiniger.ch/">
-<meta property="og:image" content="https://www.pascalheiniger.ch/assets/social-share.jpg"> <!-- Replace with your preview image -->
-<meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@heinigerpascal">
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:creator" content="@heinigerpascal">
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Pascal Heiniger",
-  "url": "https://www.pascalheiniger.ch",
-  "sameAs": [
-    "https://www.instagram.com/heiniger.p",
-    "https://www.linkedin.com/in/pascalheiniger",
-    "https://twitter.com/heinigerpascal"
-  ],
-  "jobTitle": "Creative Director",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "P. Heiniger Design"
-  },
-  "alumniOf": "Life, Design, Alps",
-  "knowsAbout": ["Brand Strategy", "UI/UX", "Reforestation", "Ski Experience", "Shopify"],
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Andermatt",
-    "addressCountry": "Switzerland"
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Pascal Heiniger",
+    "url": "https://www.pascalheiniger.ch",
+    "image": "https://www.pascalheiniger.ch/assets/social-share.jpg",
+    "email": "mailto:hello@pascalheiniger.ch",
+    "sameAs": [
+      "https://www.instagram.com/heiniger.p",
+      "https://www.linkedin.com/in/pascalheiniger",
+      "https://twitter.com/heinigerpascal"
+    ],
+    "jobTitle": "Creative Director",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "P. Heiniger Design"
+    },
+    "knowsAbout": ["Brand Strategy", "UI/UX", "Reforestation", "Ski Experience", "Shopify"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Andermatt",
+      "addressCountry": "Switzerland"
+    }
   }
-}
-</script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>P. Heiniger Design</title>
- <style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    font-family: sans-serif;
-  }
+  </script>
 
- .phone-frame {
-  width: 100%;
-  max-width: 390px;
-  height: 100%;
-  max-height: 844px;
-  border-radius: 40px;
-  background: rgba(255, 255, 255, 0.02);
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-sizing: border-box;
-  position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(20px);
-}
-
-/* Panoramic animated background inside the phone frame */
-.phone-frame::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("https://backend.roundshot.com/cams/4a3f395ba9454e649d686b03723d70fd/default");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: left center;
-  animation: panLeftToRight 300s linear infinite;
-  opacity: 0.6;
-  z-index: -1;
-}
-
-/* Keyframes for slow panoramic pan effect */
-@keyframes panLeftToRight {
-  0% {
-    background-position: left center;
-  }
-  100% {
-    background-position: right center;
-  }
-}
-
-  .icon-link {
-    position: relative;
-    display: inline-block;
-    width: 62px;
-    height: 62px;
-    padding: 5px;
-    background: rgba(227, 226, 226, 0.458);
-    border-radius: 18px;
-    transition: transform 0.2s ease, background 0.3s ease;
-    z-index: 1;
-  }
-
-  .icon-link::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle, rgba(221, 221, 221, 0.334), transparent 70%);
-    border-radius: 18px;
-    transform: scale(1.4);
-    filter: blur(10px);
-    z-index: -1;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
-  }
-
-  .icon-link:hover {
-    transform: scale(1.1);
-    background: rgba(231, 231, 231, 0.458)transparent 50%);
-  }
-
-  .icon-link:hover::before {
-    opacity: 1;
-  }
-
-  .icon-svg {
-    width: 100%;
-    height: 100%;
-    fill: #d8d5cb;
-    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.2));
-  }
-
-  .icon-row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 14px;
-    margin-top: -150px; /* Push it down if needed */
-    justify-items: center;
-    align-items: start;
-  }
-
-  .bottom-icons {
-    display: flex;
-    justify-content: space-around;
-    padding: 18px 0;
-  }
-
-  .bottom-icons .icon {
-    width: 62px;
-    height: 62px;
-    font-size: 26px;
-  }
-
-  .status-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 13px;
-  color: white;
-  padding: 4px 8px;
-  height: 24px;
-  margin-bottom: 8px;
-  opacity: 0.9;
-  font-weight: 500;
-}
-
-.status-left {
-  font-size: 13px;
-}
-
-.status-right {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-/* Reception bars */
-.reception span {
-  display: inline-block;
-  width: 2px;
-  background: white;
-  margin-right: 1px;
-  border-radius: 1px;
-}
-
-.reception span:nth-child(1) { height: 4px; opacity: 0.4; }
-.reception span:nth-child(2) { height: 6px; opacity: 0.6; }
-.reception span:nth-child(3) { height: 8px; opacity: 0.8; }
-.reception span:nth-child(4) { height: 10px; opacity: 1; }
-
-/* Battery icon */
-.battery {
-  display: flex;
-  align-items: center;
-  position: relative;
-  width: 24px;
-  height: 12px;
-}
-
-.battery-body {
-  width: 20px;
-  height: 12px;
-  border: 1.5px solid white;
-  border-radius: 2px;
-  position: relative;
-  box-sizing: border-box;
-}
-
-.battery-level {
-  background: linear-gradient(to right, #d8d5cb, #ffffff);
-  width: 60%;
-  height: 100%;
-  animation: batteryPulse 3s infinite ease-in-out alternate;
-}
-
-.battery-tip {
-  width: 2px;
-  height: 6px;
-  background: white;
-  margin-left: 1px;
-  border-radius: 1px;
-}
-
-/* Animation for battery level */
-@keyframes batteryPulse {
-  0%   { width: 40%; }
-  50%  { width: 70%; }
-  100% { width: 60%; }
-}
-
-@media (min-width: 768px) {
-  body::before {
-    content: "📱 Mobile-first, they said. 90% on mobile, they said... Then you show up like a desktop noob 🙄";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 12px 16px;
-    background: #ff00ae;
-    color: #fcfcfc;
-    font-weight: 800;
-    font-size: 15px;
-    text-align: center;
-    z-index: 10;
-    animation: wiggle 1.2s ease-in-out infinite alternate;
-  }
-}
-@keyframes wiggle {
-  0% { transform: rotateZ(-0.3deg); }
-  100% { transform: rotateZ(0.3deg); }
-}
-</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="./phd_modular_css/base/reset.css">
+  <link rel="stylesheet" href="./phd_modular_css/pages/iam.css">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="phone-frame">
