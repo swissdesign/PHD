@@ -1,23 +1,40 @@
 /* === Base Reset === */
 html, body {
-  height: 100vh;
-  overflow: hidden; /* Fully disable vertical scroll */
+  height: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Source Sans Pro', sans-serif;
   background: #f9f9f9;
   scroll-behavior: smooth;
-  scrollbar-width: none; /* Firefox */
 }
-body::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
+
+@media (min-width: 768px) {
+  html, body {
+    height: 100vh;
+    overflow: hidden; /* Fully disable vertical scroll on desktop */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  body::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
 }
 
 /* === Simulated Scroll Wrapper === */
 .scroll-sim {
-  overflow: hidden;
+  overflow-x: auto; /* Allow native swipe access on touch devices */
+  overflow-y: hidden;
   height: 100vh;
   position: relative;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
+}
+
+@media (min-width: 768px) {
+  .scroll-sim {
+    overflow: hidden; /* Desktop uses JS-driven translation */
+    scroll-snap-type: none;
+  }
 }
 
 /* === Animated Horizontal Track === */
